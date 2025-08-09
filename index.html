@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CompTIA A+ (220-1201) Study Notes</title>
+    
+    <!-- Link to your index stylesheet -->
+    <link rel="stylesheet" href="index-style.css">
+</head>
+<body>
+
+    <div class="container">
+        
+        <h1>CompTIA A+ 220-1201 Course Notes</h1>
+        
+        <!-- === Topic Section 1 === -->
+        <div class="topic-section">
+            <h2>1.0 Mobile Devices</h2>
+            <ul class="subtopic-list">
+                <!-- Each list item is a link to a lesson page -->
+                <li><a href="1.1.html">1.1 Laptop Hardware</a></li>
+                <li><a href="#">1.2 Mobile Device Display Technologies (Add link later)</a></li>
+                <li><a href="#">1.3 Laptop Features (Add link later)</a></li>
+            </ul>
+        </div>
+        
+        <!-- === Topic Section 2 === -->
+        <div class="topic-section">
+            <h2>2.0 Networking</h2>
+            <ul class="subtopic-list">
+                <li><a href="#">2.1 Common Network Hardware (Add link later)</a></li>
+                <li><a href="#">2.2 Network Cabling (Add link later)</a></li>
+            </ul>
+        </div>
+        
+        <!-- === ADD MORE TOPIC SECTIONS HERE AS YOU PROGRESS === -->
+        
+        <footer>
+            <p>Last Updated: <span id="lastUpdatedDate"></span></p>
+        </footer>
+
+    </div>
+
+    <!-- This JavaScript automatically updates the "Last Updated" date -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const lastUpdated = new Date(document.lastModified);
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('lastUpdatedDate').textContent = lastUpdated.toLocaleDateString('en-US', options);
+        });
+    </script>
+
+</body>
+</html>
