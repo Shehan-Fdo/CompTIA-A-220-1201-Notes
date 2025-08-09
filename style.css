@@ -109,7 +109,7 @@ code {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 600;
-    border-radius: 20px;
+    border-radius: 50px;
     border: none;
     cursor: pointer;
     margin: 0 10px; /* Adds space between buttons if you have two */
