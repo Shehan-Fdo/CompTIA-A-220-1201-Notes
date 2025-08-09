@@ -1,0 +1,92 @@
+/* --- Stylesheet for Main Index Page --- */
+/* This style matches the plain design of style.css */
+
+/* Modern CSS Reset */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Root Variables - Identical to style.css for consistency */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #212529;
+    --heading-color: #343a40;
+    --accent-color: #007bff;
+    --subtle-border-color: #dee2e6;
+    --highlight-bg-color: #f1f3f5;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--heading-color);
+    font-weight: 700;
+}
+
+/* Styling for each major topic section */
+.topic-section {
+    margin-bottom: 40px;
+}
+
+.topic-section h2 {
+    font-size: 1.75rem;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--subtle-border-color);
+    font-weight: 600;
+}
+
+/* Styling for the list of subtopics */
+.subtopic-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+.subtopic-list li a {
+    display: block;
+    padding: 12px 15px;
+    text-decoration: none;
+    color: var(--accent-color);
+    border-radius: 6px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    transition: background-color 0.2s ease;
+}
+
+.subtopic-list li a:hover {
+    color:#00438c
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    color: #6c757d;
+    font-size: 0.9em;
+    border-top: 1px solid var(--subtle-border-color);
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    h1 { font-size: 2rem; }
+    h2 { font-size: 1.5rem; }
+    .container { margin: 20px auto; }
+}
