@@ -1,1 +1,92 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Ethernet Wiring Standards (T568A & T568B) - A+ Core 1 (2.2)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Ethernet Wiring Standards (T568A & T568B)</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.2</p></div><div class="section"><h2>International Ethernet Standards</h2><ul><li>Standardization managed by <strong>ISO/IEC 11801</strong> (international) and <strong>ANSI/TIA-568</strong> (US).</li><li><strong>TIA (Telecommunications Industry Association)</strong> defines cabling standards for commercial buildings.</li><li>Standards ensure <strong>consistency</strong> in wiring across installations and troubleshooting.</li></ul></div><div class="section"><h2>T568A vs. T568B Color Schemes</h2><ul><li>Both use <strong>RJ45 connectors</strong> but differ in wire-color pin assignments.</li><li><strong>T568B</strong> is more common in the US and globally.</li><li>Organizations typically stick to <strong>one standard</strong> for consistency.</li><li><strong>Never mix T568A and T568B</strong> on the same cable (e.g., one end A, other end B).</li><li>Myth: Mixing A/B is <strong>not</strong> a crossover cable—it causes connectivity issues.</li></ul></div><div class="section"><h2>Pinout Comparisons</h2><ul><li><strong>T568A:</strong> <code>1: White/Green</code>, <code>2: Green</code>, <code>3: White/Orange</code>, <code>4: Blue</code>, <code>5: White/Blue</code>, <code>6: Orange</code>, <code>7: White/Brown</code>, <code>8: Brown</code>.</li><li><strong>T568B:</strong> <code>1: White/Orange</code>, <code>2: Orange</code>, <code>3: White/Green</code>, <code>4: Blue</code>, <code>5: White/Blue</code>, <code>6: Green</code>, <code>7: White/Brown</code>, <code>8: Brown</code>.</li><li><strong>Similarities:</strong> Pins 4/5 (Blue) and 7/8 (Brown) are identical in both standards.</li><li>Only <strong>pins 1/2 and 3/6</strong> differ—memorize these variations.</li></ul></div><div class="section"><h2>Practical Applications</h2><ul><li>Critical for <strong>crimping</strong> and <strong>cable management</strong> in networking.</li><li>Verify wire alignment in <strong>RJ45 connectors</strong> before crimping.</li><li>Keystone jacks may label <strong>A/B schemes</strong> for easier installation.</li><li>Some jacks use <strong>custom color guides</strong> but internally map to T568A/B.</li><li>Example: A jack might split wires into two groups of four, with A/B labels for each.</li></ul></div><div class="section"><h2>Troubleshooting Tips</h2><ul><li>Inspect cable ends to identify the standard used (e.g., <strong>White/Orange</strong> on pin 1 = T568B).</li><li>Use a <strong>cable tester</strong> to verify continuity and correct pinout.</li><li>Re-crimp if wires are misaligned or damaged.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/2.1.html" class="nav-button">← Previous Lesson (2.1)</a><a href="pages/2.3.html" class="nav-button">Next Lesson (2.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ethernet Wiring Standards - A+ Core 1 (2.1)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Ethernet Wiring Standards</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p>
+        </div>
+        <div class="section">
+            <h2>International and National Standards</h2>
+            <ul>
+                <li>Ethernet wiring standards are globally recognized and defined by international and national organizations.</li>
+                <li>The <strong>ISO/IEC 11801</strong> standard is an international cabling standard that defines different classes of networking standards.</li>
+                <li>In the US, the <strong>Telecommunications Industry Association (TIA)</strong> manages the <strong>ANSI/TIA-568</strong> standard for commercial building cabling installations.</li>
+                <li>The <strong>ANSI/TIA-568</strong> standard specifies wire color assignments for Ethernet cables using <strong>RJ45 connectors</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>T568A and T568B Wiring Schemes</h2>
+            <ul>
+                <li>The <strong>T568A</strong> and <strong>T568B</strong> are the two primary color-coding schemes for Ethernet cables.</li>
+                <li>Both schemes use the same <strong>RJ45 connector</strong> but differ in the arrangement of wire colors on specific pins.</li>
+                <li><strong>T568B</strong> is the most commonly used standard in the US and many other regions.</li>
+                <li>Organizations typically choose one standard and maintain consistency throughout their installations.</li>
+                <li><strong>Mixing T568A and T568B on opposite ends of a cable is not recommended</strong>, especially for gigabit networks, as it can cause connectivity issues.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Color Code Comparison</h2>
+            <ul>
+                <li>Both T568A and T568B share identical color assignments for some pins, simplifying memorization.</li>
+                <li><strong>Common colors for both schemes:</strong>
+                    <ul>
+                        <li><strong>Pin 4:</strong> <code>Blue</code></li>
+                        <li><strong>Pin 5:</strong> <code>White/Blue</code></li>
+                        <li><strong>Pin 7:</strong> <code>White/Brown</code></li>
+                        <li><strong>Pin 8:</strong> <code>Brown</code></li>
+                    </ul>
+                </li>
+                <li><strong>Differences between T568A and T568B:</strong>
+                    <ul>
+                        <li><strong>T568A:</strong>
+                            <ul>
+                                <li><strong>Pin 1:</strong> <code>White/Green</code></li>
+                                <li><strong>Pin 2:</strong> <code>Green</code></li>
+                                <li><strong>Pin 3:</strong> <code>White/Orange</code></li>
+                                <li><strong>Pin 6:</strong> <code>Orange</code></li>
+                            </ul>
+                        </li>
+                        <li><strong>T568B:</strong>
+                            <ul>
+                                <li><strong>Pin 1:</strong> <code>White/Orange</code></li>
+                                <li><strong>Pin 2:</strong> <code>Orange</code></li>
+                                <li><strong>Pin 3:</strong> <code>White/Green</code></li>
+                                <li><strong>Pin 6:</strong> <code>Green</code></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li>To identify the wiring scheme, examine the colors on <strong>pins 1, 2, 3, and 6</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Practical Applications and Best Practices</h2>
+            <ul>
+                <li>Understanding these standards is essential for <strong>cable installation, troubleshooting, and certification exams</strong> like the A+.</li>
+                <li>When crimping cables, verify the color order before securing the connector to avoid errors.</li>
+                <li>Some keystone jacks and wall plates provide color-coded guides for both T568A and T568B, simplifying installation.</li>
+                <li>Example of a <strong>keystone jack</strong> layout:
+                    <ul>
+                        <li><strong>T568A:</strong> Green, White/Green, Blue, White/Blue on one side; Orange, White/Orange, White/Brown, Brown on the other.</li>
+                        <li><strong>T568B:</strong> Orange, White/Orange, Blue, White/Blue on one side; Green, White/Green, White/Brown, Brown on the other.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+            <div>
+                <a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a>
+                <a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

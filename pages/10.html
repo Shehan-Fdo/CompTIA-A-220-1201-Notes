@@ -1,21 +1,132 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DNS (Domain Name System) - A+ Core 1 (1.2)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>DNS (Domain Name System)</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 1.2</p></div><div class="section"><h2>Introduction to DNS</h2><ul><li>DNS (<strong>Domain Name System</strong>) is a <strong>critical network service</strong> that translates <code>fully qualified domain names (FQDNs)</code> (e.g., <code>www.professormesser.com</code>) into <code>IP addresses</code>.</li><li>Eliminates the need to memorize <code>IP addresses</code> by allowing users to access resources using human-readable names.</li><li>Functions as a <strong>distributed, hierarchical database</strong> scattered across global servers.</li><li>Supports additional features beyond name resolution (e.g., email routing, security records).</li></ul></div><div class="section"><h2>DNS Hierarchy and Structure</h2><ul><li><strong>Root Servers</strong>: 13 logical clusters (physically >1,000 servers) that direct queries to <strong>top-level domains (TLDs)</strong>.</li><li><strong>Top-Level Domains (TLDs)</strong>:
-<ul><li><strong>Generic TLDs (gTLDs)</strong>: <code>.com</code>, <code>.org</code>, <code>.net</code>.</li><li><strong>Country-Code TLDs (ccTLDs)</strong>: <code>.us</code> (US), <code>.ca</code> (Canada), <code>.uk</code> (UK). ~275 country codes exist.</li></ul></li><li><strong>Hierarchical Structure</strong>:
-<ul><li>Example: <code>katie.east.professormesser.com</code> breaks down as:
-<ul><li><code>com</code> (TLD) → <code>professormesser</code> (domain) → <code>east</code> (subdomain) → <code>katie</code> (host).</li></ul></li></ul></li></ul></div><div class="section"><h2>DNS Tools</h2><ul><li><strong><code>dig</code> (Domain Information Groper)</strong>:
-<ul><li>Linux/Mac/Windows (with installation) command-line tool.</li><li>Queries DNS servers for records (e.g., <code>dig www.professormesser.com</code>).</li><li>Returns:
-<ul><li>Query details (e.g., <code>QUESTION</code> section).</li><li>Answers (e.g., <code>IP addresses</code>, <code>TTL</code>).</li></ul></li></ul></li><li><strong><code>nslookup</code></strong>:
-<ul><li>Windows-native tool (also available on Linux/Mac).</li><li>Functionality similar to <code>dig</code> (e.g., <code>nslookup www.professormesser.com</code>).</li></ul></li></ul></div><div class="section"><h2>DNS Resource Records (RR)</h2><ul><li>Stores data in <strong>resource records (RR)</strong>, which define:
-<ul><li>IP addresses (<code>A</code>/<code>AAAA</code>).</li><li>Mail servers (<code>MX</code>).</li><li>Aliases (<code>CNAME</code>).</li><li>Text-based info (<code>TXT</code>).</li><li>Authorization (<code>SOA</code>).</li></ul></li><li><strong>Critical Notes</strong>:
-<ul><li>Misconfigurations can make devices <strong>unreachable</strong>.</li><li>Always <strong>backup DNS configurations</strong> before changes.</li></ul></li></ul></div><div class="section"><h2>Key DNS Record Types</h2><ul><li><strong><code>A Record</code></strong>:
-<ul><li>Maps a <code>hostname</code> to an <code>IPv4 address</code>.</li><li>Example: <code>www.professormesser.com → 162.159.246.164</code>.</li><li><code>TTL (Time to Live)</code>: Duration (e.g., 15 mins) a record is cached locally.</li></ul></li><li><strong><code>AAAA Record</code> (Quad A)</strong>:
-<ul><li>Maps a <code>hostname</code> to an <code>IPv6 address</code>.</li><li>Process identical to <code>A records</code> but for IPv6.</li></ul></li><li><strong><code>CNAME Record</code> (Canonical Name)</strong>:
-<ul><li>Creates an <strong>alias</strong> for a hostname.</li><li>Example: <code>ftp.example.com</code> → <code>mail.example.com</code> (both point to the same IP).</li><li>Simplifies management: Changing the <code>A record</code> of the target host updates all <code>CNAMEs</code>.</li></ul></li><li><strong><code>MX Record</code> (Mail Exchanger)</strong>:
-<ul><li>Specifies mail servers for a domain (critical for <strong>email delivery</strong>).</li><li>Example: <code>IN MX mail.example.com</code>.</li><li>Mail servers query <code>MX records</code> to route emails (e.g., <code>james@professormesser.com</code> → <code>mail.professormesser.com</code>).</li></ul></li><li><strong><code>TXT Record</code></strong>:
-<ul><li>Stores <strong>human-readable text</strong> (e.g., verification keys, policies).</li><li>Common uses:
-<ul><li><strong>Verification</strong>: Proving domain ownership (e.g., for email services).</li><li><strong>SPF/DKIM/DMARC</strong>: Email security (see below).</li></ul></li><li>View with: <code>dig professormesser.com TXT</code> or <code>nslookup -type=txt google.com</code>.</li></ul></li></ul></div><div class="section"><h2>Email Security Records</h2><ul><li><strong><code>SPF Record</code> (Sender Policy Framework)</strong>:
-<ul><li><code>TXT record</code> listing <strong>authorized email servers</strong> for a domain.</li><li>Prevents <strong>spoofing</strong> by verifying the sending server’s IP.</li><li>Example: <code>v=spf1 include:_spf.google.com ~all</code>.</li></ul></li><li><strong><code>DKIM Record</code> (DomainKeys Identified Mail)</strong>:
-<ul><li>Adds a <strong>digital signature</strong> to emails using a <code>public/private key pair</code>.</li><li><code>Public key</code> is published in a <code>TXT record</code>; <code>private key</code> signs outgoing emails.</li><li>Recipient servers verify signatures using the public key.</li></ul></li><li><strong><code>DMARC Record</code> (Domain-based Message Authentication, Reporting & Conformance)</strong>:
-<ul><li><code>TXT record</code> defining policies for emails that fail <code>SPF</code>/<code>DKIM</code>.</li><li>Actions:
-<ul><li><code>p=none</code>: No action (monitor only).</li><li><code>p=quarantine</code>: Send to spam.</li><li><code>p=reject</code>: Block delivery.</li></ul></li><li>Example: <code>v=DMARC1; p=quarantine; rua=mailto:reports@professormesser.com</code>.</li></ul></li></ul></div><div class="section"><h2>DNS Management</h2><ul><li><strong>Configuration Methods</strong>:
-<ul><li><strong>Text-based files</strong>: Direct editing (e.g., <code>SOA</code>, <code>A</code>, <code>MX</code> records).</li><li><strong>Web-based frontends</strong>: User-friendly interfaces (e.g., cPanel, Cloudflare).</li></ul></li><li><strong>Best Practices</strong>:
-<ul><li>Test changes in a <strong>non-production environment</strong>.</li><li>Use <strong>short TTLs</strong> before major changes (e.g., 5 mins) to allow quick propagation.</li><li>Monitor with tools like <code>dig</code>/<code>nslookup</code> post-update.</li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Domain Name System (DNS) - A+ Core 1 (2.1)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Domain Name System (DNS)</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to DNS</h2>
+            <ul>
+                <li>DNS stands for <strong>Domain Name System</strong>, a critical network service that translates human-readable domain names (e.g., <code>www.example.com</code>) into machine-readable <strong>IP addresses</strong>.</li>
+                <li>Eliminates the need to memorize IP addresses by allowing users to connect using domain names.</li>
+                <li>DNS operates as a <strong>distributed database</strong> scattered across servers worldwide.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DNS Hierarchy and Structure</h2>
+            <ul>
+                <li>The DNS database is organized hierarchically, starting with <strong>root servers</strong> at the top.</li>
+                <ul>
+                    <li>There are <strong>13 root server clusters</strong>, comprising over 1,000 individual servers globally.</li>
+                    <li>Root servers direct queries to <strong>top-level domains (TLDs)</strong> such as <code>.com</code>, <code>.org</code>, and <code>.net</code>.</li>
+                </ul>
+                <li><strong>Country-code TLDs (ccTLDs)</strong> represent specific countries (e.g., <code>.us</code> for the United States, <code>.uk</code> for the United Kingdom).</li>
+                <li>Below TLDs are <strong>domain names</strong> (e.g., <code>example.com</code>), which can further subdivide into subdomains (e.g., <code>www.example.com</code>, <code>mail.example.com</code>).</li>
+                <li>This hierarchical structure allows for scalable and organized domain management.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DNS Resolution Process</h2>
+            <ul>
+                <li>When a user enters a domain name (e.g., <code>www.example.com</code>), a DNS query is initiated to resolve the name into an IP address.</li>
+                <li>The query follows the hierarchy: root servers → TLD servers → authoritative DNS servers for the domain.</li>
+                <li>Redundancy is built into DNS; multiple IP addresses may be returned for load balancing and fault tolerance.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DNS Query Tools</h2>
+            <ul>
+                <li><strong>dig (Domain Information Groper)</strong>: A command-line tool available on Linux, macOS, and some Windows systems for querying DNS servers.</li>
+                <ul>
+                    <li>Example: <code>dig www.example.com</code> returns IP addresses and query details.</li>
+                    <li>Can query specific record types (e.g., <code>dig example.com TXT</code>).</li>
+                </ul>
+                <li><strong>nslookup</strong>: A Windows and cross-platform tool for querying DNS records.</li>
+                <ul>
+                    <li>Example: <code>nslookup www.example.com</code> returns IP addresses associated with the domain.</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DNS Resource Records (RR)</h2>
+            <ul>
+                <li>DNS databases store <strong>resource records (RRs)</strong>, which contain information about domains and their associated services.</li>
+                <li>Common record types include:</li>
+                <ul>
+                    <li><strong>A Record</strong>: Maps a domain name to an <strong>IPv4 address</strong> (e.g., <code>www.example.com → 192.0.2.1</code>).</li>
+                    <li><strong>AAAA Record</strong>: Maps a domain name to an <strong>IPv6 address</strong> (e.g., <code>www.example.com → 2001:0db8::1</code>).</li>
+                    <li><strong>CNAME (Canonical Name)</strong>: Creates an alias for a domain name, pointing one domain to another (e.g., <code>ftp.example.com → www.example.com</code>).</li>
+                    <li><strong>MX (Mail Exchanger)</strong>: Specifies the mail server responsible for receiving emails for a domain (e.g., <code>example.com → mail.example.com</code>).</li>
+                    <li><strong>TXT (Text)</strong>: Stores human-readable text, often used for verification, spam prevention, and policy enforcement.</li>
+                    <li><strong>SOA (Start of Authority)</strong>: Contains administrative information about the domain, such as the primary DNS server and contact details.</li>
+                </ul>
+                <li>DNS configurations should be handled carefully; errors can disrupt domain accessibility.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DNS Record Management</h2>
+            <ul>
+                <li>DNS records can be managed via:</li>
+                <ul>
+                    <li><strong>Text-based configuration files</strong> (e.g., BIND zone files).</li>
+                    <li><strong>Web-based interfaces</strong> provided by DNS hosting services.</li>
+                </ul>
+                <li><strong>Time to Live (TTL)</strong>: Specifies how long a DNS record is cached by resolvers before refreshing.</li>
+                <ul>
+                    <li>Shorter TTLs (e.g., 15 minutes) allow faster propagation of changes but increase DNS query load.</li>
+                    <li>Longer TTLs (e.g., 24 hours) reduce query load but delay updates.</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Email Security and DNS</h2>
+            <ul>
+                <li>DNS plays a critical role in email security by preventing spam and verifying sender authenticity.</li>
+                <li>Key email-related DNS records include:</li>
+                <ul>
+                    <li><strong>DKIM (DomainKeys Identified Mail)</strong>: Uses public-key cryptography to verify email authenticity.</li>
+                    <ul>
+                        <li>A <strong>TXT record</strong> stores the public key, while the private key signs outgoing emails.</li>
+                        <li>Recipients use the public key to verify the email’s digital signature.</li>
+                    </ul>
+                    <li><strong>SPF (Sender Policy Framework)</strong>: Lists authorized email servers for a domain to prevent spoofing.</li>
+                    <ul>
+                        <li>Example: <code>v=spf1 include:_spf.example.com ~all</code>.</li>
+                        <li>Receiving servers check if the sending server is listed in the SPF record.</li>
+                    </ul>
+                    <li><strong>DMARC (Domain-based Message Authentication, Reporting, and Conformance)</strong>: Defines policies for handling emails that fail SPF or DKIM checks.</li>
+                    <ul>
+                        <li>Example: <code>v=DMARC1; p=quarantine; rua=mailto:reports@example.com</code>.</li>
+                        <li>Policies can instruct receivers to <strong>quarantine</strong>, <strong>reject</strong>, or <strong>allow</strong> failed emails.</li>
+                        <li>Reports on email disposition can be sent to a specified email address for monitoring.</li>
+                    </ul>
+                </ul>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Best Practices for DNS Management</h2>
+            <ul>
+                <li>Always back up DNS configurations before making changes.</li>
+                <li>Use <strong>TTL values</strong> strategically to balance update speed and query load.</li>
+                <li>Implement <strong>DKIM</strong>, <strong>SPF</strong>, and <strong>DMARC</strong> to enhance email security.</li>
+                <li>Monitor DNS performance and query logs to detect issues or attacks.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+            <div>
+                <a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a>
+                <a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

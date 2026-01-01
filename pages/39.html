@@ -1,17 +1,109 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BIOS and UEFI Configuration - A+ Core 1 (1.2)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>BIOS and UEFI Configuration</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 1.2</p></div><div class="section"><h2>Accessing BIOS/UEFI</h2><ul><li>Access during boot by pressing a <strong>function key</strong> (commonly <code>Del</code>, <code>F1</code>, <code>F2</code>, or <code>Ctrl+Alt+S</code>).</li><li>For <strong>virtual machines</strong>:
-<ul><li><strong>Hyper-V</strong> (Windows 10/11), <strong>VMware Workstation</strong> (Windows/macOS), or <strong>VMware Fusion</strong> (macOS) support BIOS access.</li><li><strong>VirtualBox</strong> does <strong>not</strong> support virtual BIOS configuration.</li><li>Alternative: Use a <strong>UEFI BIOS simulator</strong> (search online).</li></ul></li><li><strong>Fast Startup</strong> (Windows 10/11) prevents BIOS access on shutdown. Solutions:
-<ul><li>Hold <code>Shift</code> while clicking <strong>Restart</strong>.</li><li>Navigate to <strong>Settings > Update & Security > Recovery > Advanced Startup > Restart Now</strong>.</li><li>Use <code>msconfig</code> (System Configuration utility).</li><li>Interrupt boot <strong>3 times</strong> to force a full restart on the 4th attempt.</li></ul></li></ul></div><div class="section"><h2>BIOS/UEFI Warnings and Best Practices</h2><ul><li><strong>Risks</strong>: Incorrect changes can cause <strong>boot failures</strong> or <strong>system instability</strong>.</li><li><strong>Best Practices</strong>:
-<ul><li>Document changes (write down or take <strong>screenshots</strong>).</li><li>Understand settings before modifying (especially <strong>CPU/memory</strong> configurations).</li><li>Backup BIOS configuration before making changes.</li></ul></li></ul></div><div class="section"><h2>Key BIOS/UEFI Features</h2><ul><li><strong>Hardware Control</strong>:
-<ul><li>Enable/disable hardware (e.g., <strong>USB ports</strong>, <strong>integrated peripherals</strong>).</li><li>Disabled hardware is <strong>invisible</strong> to the OS.</li></ul></li><li><strong>Boot Order</strong>:
-<ul><li>Prioritize boot devices (e.g., <strong>SSD</strong>, <strong>USB</strong>, <strong>Network</strong>, <strong>M.2</strong>).</li><li>Move devices <strong>up/down</strong> in the sequence via BIOS menu (e.g., <code>Startup > Primary Boot Sequence</code>).</li></ul></li><li><strong>USB Configuration</strong>:
-<ul><li>Enable/disable <strong>USB ports</strong> (security measure).</li><li>Example: <strong>DoD banned USB drives (2008)</strong> due to <code>Agent.btz</code> worm.</li><li>Settings under <code>Devices > USB Setup</code> (enable/disable ports, adjust <strong>USB legacy support</strong>).</li></ul></li><li><strong>Fan Control</strong>:
-<ul><li>Monitor and adjust <strong>fan speeds</strong> based on temperature.</li><li>Modes:
-<ul><li><strong>Best Performance</strong>: Max cooling (loud).</li><li><strong>Best Experience</strong>: Balanced (quiet).</li><li><strong>Full Speed</strong>: Always max RPM.</li></ul></li><li>Configure under <code>Power > Intelligent Cooling</code>.</li></ul></li><li><strong>Secure Boot</strong> (UEFI only):
-<ul><li>Prevents <strong>malware</strong> from loading before the OS.</li><li>Uses <strong>digital signatures</strong> to verify:
-<ul><li>OS integrity.</li><li>BIOS firmware.</li><li>Bootloader.</li></ul></li><li>Disable for <strong>legacy OS</strong> (e.g., Windows 7).</li><li>Configure under <code>Security > Secure Boot</code> (manage keys, enable/disable).</li></ul></li><li><strong>Password Protection</strong>:
-<ul><li><strong>User Password (Boot Password)</strong>: Required to <strong>boot the system</strong>.</li><li><strong>Supervisor Password (BIOS Password)</strong>: Required to <strong>access/modify BIOS settings</strong>.</li><li>Reset via <strong>motherboard jumper</strong> (e.g., <code>CLRTC</code>) if forgotten.</li></ul></li></ul></div><div class="section"><h2>Temperature and Hardware Monitoring</h2><ul><li>BIOS displays <strong>real-time temperatures</strong> (CPU, memory, motherboard).</li><li>Useful for:
-<ul><li>Diagnosing <strong>overheating</strong>.</li><li>Verifying cooling after <strong>hardware upgrades</strong>.</li></ul></li><li>Access via <strong>hardware monitoring</strong> section (varies by manufacturer).</li></ul></div><div class="section"><h2>Virtualization Support</h2><ul><li>Enable <strong>hardware-assisted virtualization</strong> for better performance:
-<ul><li><strong>Intel VT-x</strong> (Intel CPUs).</li><li><strong>AMD-V</strong> (AMD CPUs).</li></ul></li><li>Configure under <code>Advanced > CPU Setup</code> (e.g., <code>AMD Secure Virtual Machine</code>).</li><li>Required for <strong>hypervisors</strong> (e.g., Hyper-V, VMware).</li></ul></div><div class="section"><h2>BIOS/UEFI Storage and Reset</h2><ul><li><strong>Firmware Storage</strong>:
-<ul><li>BIOS/UEFI firmware stored in <strong>flash memory</strong> (upgradable).</li><li>Configuration stored in <strong>non-volatile flash memory</strong> (no battery dependency).</li><li>Legacy systems used <strong>CMOS</strong> (volatile memory + battery).</li></ul></li><li><strong>Resetting BIOS</strong>:
-<ul><li>Physical access required (e.g., <strong>jumper</strong> on motherboard).</li><li>Example: <code>CLRTC</code> (Clear Real-Time Clock RAM) on ASUS boards.</li><li>Steps:
-<ul><li>Power off.</li><li>Move jumper to <strong>clear pins</strong> (short circuit).</li><li>Power on to reset.</li><li>Return jumper to original position.</li></ul></li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOS and UEFI Configuration - A+ Core 1 (3.5)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BIOS and UEFI Configuration</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.5</p>
+        </div>
+        <div class="section">
+            <h2>Accessing the BIOS/UEFI</h2>
+            <ul>
+                <li>BIOS (Basic Input/Output System) or UEFI (Unified Extensible Firmware Interface) is low-level firmware that initializes hardware before the OS loads.</li>
+                <li>To access BIOS/UEFI, press a specific key or key combination during system startup (e.g., <strong>Delete</strong>, <strong>F1</strong>, <strong>F2</strong>, <strong>Ctrl+S</strong>, or <strong>Ctrl+Alt+S</strong>).</li>
+                <li>On virtual machines (VMs), hypervisors like <strong>Hyper-V</strong>, <strong>VMware Workstation</strong>, or <strong>VMware Fusion</strong> allow BIOS access by interrupting the boot process.</li>
+                <li><strong>VirtualBox</strong> does not support virtual BIOS configuration; use a different hypervisor or a physical machine instead.</li>
+                <li>For online practice, search for <strong>UEFI BIOS Simulator</strong> to find interactive tools.</li>
+                <li><strong>Windows Fast Startup</strong> (in Windows 10/11) prevents full shutdowns, blocking BIOS access. To disable it:
+                    <ul>
+                        <li>Hold <strong>Shift</strong> while clicking <strong>Restart</strong>.</li>
+                        <li>Navigate to <strong>Settings &gt; Update &amp; Security &gt; Recovery &gt; Advanced Startup &gt; Restart Now</strong>.</li>
+                        <li>Use <strong>MSConfig</strong> (System Configuration) to temporarily disable Fast Startup.</li>
+                        <li>Interrupt the boot process three times in a row to force a full restart.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>BIOS/UEFI Best Practices</h2>
+            <ul>
+                <li>Making incorrect changes in BIOS/UEFI can cause system instability or failure to boot.</li>
+                <li>Always <strong>document changes</strong> before modifying settings (e.g., write them down or take a photo).</li>
+                <li>Avoid random changes, especially for <strong>memory</strong> and <strong>CPU</strong> configurations, as they can affect system reliability.</li>
+                <li>Backup the current BIOS configuration before making changes to allow easy recovery.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Key BIOS/UEFI Functions</h2>
+            <ul>
+                <li><strong>Hardware Enablement/Disablement</strong>: BIOS controls hardware visibility to the OS. Disabling hardware in BIOS prevents the OS from detecting it.</li>
+                <li><strong>Boot Order Configuration</strong>: Determines the sequence in which storage devices (e.g., SSDs, USB drives, network boot) are checked for an OS.
+                    <ul>
+                        <li>Use the BIOS menu (e.g., <strong>Startup &gt; Primary Boot Sequence</strong>) to prioritize boot devices.</li>
+                        <li>Example: Move a USB drive to the top to boot from it first.</li>
+                    </ul>
+                </li>
+                <li><strong>USB Configuration</strong>: Security teams may disable USB storage to prevent unauthorized data transfers or malware infections.
+                    <ul>
+                        <li>Example: The U.S. Department of Defense banned USB drives in 2008 after a malware incident.</li>
+                        <li>Configure USB settings under <strong>Devices &gt; USB Setup</strong> (enable/disable ports or interfaces).</li>
+                    </ul>
+                </li>
+                <li><strong>Fan and Cooling Controls</strong>: BIOS monitors temperature sensors and adjusts fan speeds for optimal cooling.
+                    <ul>
+                        <li>Settings may include <strong>Best Performance</strong> (prioritizes cooling), <strong>Best Experience</strong> (minimizes noise), or <strong>Full Speed</strong> (constant maximum cooling).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Security Features</h2>
+            <ul>
+                <li><strong>Secure Boot</strong>: A UEFI feature that verifies the digital signature of the OS, bootloader, and BIOS updates to prevent malware execution.
+                    <ul>
+                        <li>Requires a valid digital signature for the OS; older OS versions may not be supported.</li>
+                    </ul>
+                </li>
+                <li><strong>Password Protection</strong>:
+                    <ul>
+                        <li><strong>User Password (Boot Password)</strong>: Prevents system boot without the correct password.</li>
+                        <li><strong>Supervisor Password (BIOS Password)</strong>: Restricts access to BIOS settings to prevent unauthorized changes.</li>
+                    </ul>
+                </li>
+                <li>If passwords are lost, reset the BIOS configuration via:
+                    <ul>
+                        <li>Motherboard jumpers (e.g., <strong>CLRTC</strong> for Clear Real-Time Clock RAM).</li>
+                        <li>Removing the CMOS battery (older systems only).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>BIOS/UEFI Storage and Monitoring</h2>
+            <ul>
+                <li><strong>BIOS Firmware</strong>: Stored in flash memory on the motherboard, allowing updates without hardware replacement.</li>
+                <li><strong>Configuration Storage</strong>: Modern systems use non-volatile flash memory; older systems relied on CMOS (volatile memory with battery backup).</li>
+                <li><strong>Temperature Monitoring</strong>: BIOS provides real-time temperature readings for CPU, memory, and other components (e.g., <strong>45°C</strong> CPU temperature).</li>
+                <li><strong>Virtualization Support</strong>: Hardware-assisted virtualization (e.g., <strong>Intel VT</strong> or <strong>AMD-V</strong>) can be enabled in BIOS for improved VM performance.
+                    <ul>
+                        <li>Located under <strong>Advanced &gt; CPU Setup</strong> in most BIOS menus.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+            <div>
+                <a href="pages/3.4.html" class="nav-button">← Previous Lesson (3.4)</a>
+                <a href="pages/3.6.html" class="nav-button">Next Lesson (3.6) →</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
