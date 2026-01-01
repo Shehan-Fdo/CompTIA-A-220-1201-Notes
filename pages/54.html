@@ -1,9 +1,135 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Virtualization and Hypervisors - A+ Core 1 (1.2)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Virtualization and Hypervisors</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 1.2</p></div><div class="section"><h2>Introduction to Virtualization</h2><ul><li>Virtualization allows multiple <strong>virtual machines (VMs)</strong> to run on a single physical system.</li><li>A <strong>hypervisor</strong> (or <strong>virtual machine manager</strong>) manages the interaction between virtual systems and physical hardware.</li><li>Hypervisors allocate <strong>CPU cycles</strong>, <strong>memory</strong>, <strong>storage</strong>, and <strong>networking</strong> to each VM while keeping them isolated.</li></ul></div><div class="section"><h2>Types of Hypervisors</h2><ul><li><strong>Type 1 Hypervisor (Bare Metal)</strong>:
-<ul><li>Runs directly on physical hardware without an underlying OS.</li><li>Acts as the primary OS managing the hardware.</li><li>Examples: <strong>VMware ESXi</strong>, <strong>Microsoft Hyper-V</strong>.</li></ul></li><li><strong>Type 2 Hypervisor (Hosted)</strong>:
-<ul><li>Runs on top of an existing OS (e.g., Windows, macOS, Linux).</li><li>Used for desktop virtualization.</li><li>Examples: <strong>VMware Workstation</strong>, <strong>Oracle VirtualBox</strong>, <strong>Parallels Desktop</strong>.</li></ul></li><li>Both types support VMs with identical functionality; the difference is deployment.</li></ul></div><div class="section"><h2>Hardware Support for Virtualization</h2><ul><li>Modern CPUs include virtualization extensions for improved performance:
-<ul><li><strong>Intel VT (Virtualization Technology)</strong>.</li><li><strong>AMD-V (AMD Virtualization)</strong>.</li></ul></li><li>Hypervisors require sufficient <strong>RAM</strong>, <strong>CPU</strong>, and <strong>storage</strong> to support multiple VMs.</li><li>Each VM includes a full <strong>guest OS</strong>, applications, and data, increasing resource demands.</li></ul></div><div class="section"><h2>Networking in Virtualization</h2><ul><li>Hypervisors control VM network configurations:
-<ul><li><strong>Shared Network Address</strong>: VMs use a private subnet; traffic is translated via <strong>NAT</strong>.</li><li><strong>Bridged Network</strong>: VMs appear as physical devices on the local network.</li><li><strong>Private Network</strong>: VMs communicate only with each other or themselves (isolated).</li></ul></li></ul></div><div class="section"><h2>Security Considerations</h2><ul><li><strong>VM Escape</strong>: A rare but critical vulnerability where malware exploits hypervisor flaws to access other VMs.</li><li>Each VM must be secured like a standalone system:
-<ul><li>Firewalls, <strong>anti-malware</strong>, and OS hardening.</li></ul></li><li>Risks of pre-built VMs:
-<ul><li>Malware authors may distribute infected VMs.</li><li>Always build or verify VMs before use.</li></ul></li></ul></div><div class="section"><h2>Virtual Desktop Infrastructure (VDI)</h2><ul><li><strong>VDI</strong> runs desktops as VMs on remote servers (e.g., cloud).</li><li>Users access VMs via thin clients (keyboard, mouse, display).</li><li>Also called <strong>Desktop as a Service (DaaS)</strong>.</li><li>Reduces local hardware requirements but requires reliable network bandwidth.</li></ul></div><div class="section"><h2>Application Containerization</h2><ul><li>Alternative to full VMs; virtualizes only applications, not entire OS.</li><li><strong>Containers</strong> are lightweight, portable, and share the host OS.</li><li>Examples: <strong>Docker</strong>, which runs containerized apps on a single host OS.</li><li>Advantages:
-<ul><li>Smaller footprint (no guest OS overhead).</li><li>Faster deployment and migration.</li></ul></li><li>Limitations:
-<ul><li>Apps must be compatible with the host OS.</li><li>Less isolation than VMs (shared kernel).</li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtualization and Hypervisors - A+ Core 1 (1.2)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Virtualization and Hypervisors</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 1.2</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to Virtualization</h2>
+            <ul>
+                <li>Virtualization allows multiple <strong>virtual machines (VMs)</strong> to run on a single physical
+                    system.</li>
+                <li>A <strong>hypervisor</strong> (or <strong>virtual machine manager</strong>) manages the interaction
+                    between virtual systems and physical hardware.</li>
+                <li>Hypervisors allocate <strong>CPU cycles</strong>, <strong>memory</strong>, <strong>storage</strong>,
+                    and <strong>networking</strong> to each VM while keeping them isolated.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Types of Hypervisors</h2>
+            <ul>
+                <li><strong>Type 1 Hypervisor (Bare Metal)</strong>:
+                    <ul>
+                        <li>Runs directly on physical hardware without an underlying OS.</li>
+                        <li>Acts as the primary OS managing the hardware.</li>
+                        <li>Examples: <strong>VMware ESXi</strong>, <strong>Microsoft Hyper-V</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>Type 2 Hypervisor (Hosted)</strong>:
+                    <ul>
+                        <li>Runs on top of an existing OS (e.g., Windows, macOS, Linux).</li>
+                        <li>Used for desktop virtualization.</li>
+                        <li>Examples: <strong>VMware Workstation</strong>, <strong>Oracle VirtualBox</strong>,
+                            <strong>Parallels Desktop</strong>.</li>
+                    </ul>
+                </li>
+                <li>Both types support VMs with identical functionality; the difference is deployment.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Hardware Support for Virtualization</h2>
+            <ul>
+                <li>Modern CPUs include virtualization extensions for improved performance:
+                    <ul>
+                        <li><strong>Intel VT (Virtualization Technology)</strong>.</li>
+                        <li><strong>AMD-V (AMD Virtualization)</strong>.</li>
+                    </ul>
+                </li>
+                <li>Hypervisors require sufficient <strong>RAM</strong>, <strong>CPU</strong>, and
+                    <strong>storage</strong> to support multiple VMs.</li>
+                <li>Each VM includes a full <strong>guest OS</strong>, applications, and data, increasing resource
+                    demands.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Networking in Virtualization</h2>
+            <ul>
+                <li>Hypervisors control VM network configurations:
+                    <ul>
+                        <li><strong>Shared Network Address</strong>: VMs use a private subnet; traffic is translated via
+                            <strong>NAT</strong>.</li>
+                        <li><strong>Bridged Network</strong>: VMs appear as physical devices on the local network.</li>
+                        <li><strong>Private Network</strong>: VMs communicate only with each other or themselves
+                            (isolated).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Security Considerations</h2>
+            <ul>
+                <li><strong>VM Escape</strong>: A rare but critical vulnerability where malware exploits hypervisor
+                    flaws to access other VMs.</li>
+                <li>Each VM must be secured like a standalone system:
+                    <ul>
+                        <li>Firewalls, <strong>anti-malware</strong>, and OS hardening.</li>
+                    </ul>
+                </li>
+                <li>Risks of pre-built VMs:
+                    <ul>
+                        <li>Malware authors may distribute infected VMs.</li>
+                        <li>Always build or verify VMs before use.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Virtual Desktop Infrastructure (VDI)</h2>
+            <ul>
+                <li><strong>VDI</strong> runs desktops as VMs on remote servers (e.g., cloud).</li>
+                <li>Users access VMs via thin clients (keyboard, mouse, display).</li>
+                <li>Also called <strong>Desktop as a Service (DaaS)</strong>.</li>
+                <li>Reduces local hardware requirements but requires reliable network bandwidth.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Application Containerization</h2>
+            <ul>
+                <li>Alternative to full VMs; virtualizes only applications, not entire OS.</li>
+                <li><strong>Containers</strong> are lightweight, portable, and share the host OS.</li>
+                <li>Examples: <strong>Docker</strong>, which runs containerized apps on a single host OS.</li>
+                <li>Advantages:
+                    <ul>
+                        <li>Smaller footprint (no guest OS overhead).</li>
+                        <li>Faster deployment and migration.</li>
+                    </ul>
+                </li>
+                <li>Limitations:
+                    <ul>
+                        <li>Apps must be compatible with the host OS.</li>
+                        <li>Less isolation than VMs (shared kernel).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="53.html" class="nav-button">← Previous: Virtualization Concepts - 4.1</a>
+                <a href="55.html" class="nav-button">Next: Cloud Models - 4.2 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

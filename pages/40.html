@@ -1,1 +1,140 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Encryption and Hardware Security - A+ Core 1 (3.2)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Encryption and Hardware Security Modules</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.2</p></div><div class="section"><h2>The Role of Encryption in Technology</h2><ul><li>Encryption is used to protect <strong>sensitive information</strong> from unauthorized access.</li><li>Common applications of encryption include:<ul><li>Storing data on <strong>mobile phones</strong>, <strong>hard drives</strong>, and <strong>SSDs</strong>.</li><li>Securing <strong>network communications</strong> (e.g., web server interactions).</li><li>Transmitting data over <strong>airwaves</strong> (e.g., mobile networks).</li></ul></li><li>Encryption processes are typically based on <strong>open standards</strong> and <strong>publicly documented algorithms</strong>.</li><li>Just as knowing how a <strong>doorknob lock</strong> works doesn’t grant access, understanding encryption methods doesn’t compromise security—<strong>keys</strong> are required.</li></ul></div><div class="section"><h2>Digital Keys and Encryption</h2><ul><li>Encryption and decryption rely on <strong>digital keys</strong>, which function like physical keys for locks.</li><li>To decrypt data, the correct <strong>unique key</strong> must be used.</li><li>The challenge: <strong>Protecting the encryption key itself</strong> from unauthorized access.</li><li>Solutions for key protection include:<ul><li><strong>Trusted Platform Module (TPM)</strong> for individual devices.</li><li><strong>Hardware Security Module (HSM)</strong> for enterprise environments.</li></ul></li></ul></div><div class="section"><h2>Trusted Platform Module (TPM)</h2><ul><li>A <strong>TPM</strong> is a <strong>hardware-based security chip</strong> designed for cryptographic operations.</li><li>Key features of a TPM:<ul><li><strong>Cryptographic processor</strong>: Handles encryption, decryption, and random number generation.</li><li><strong>Persistent memory</strong>: Stores <strong>burned-in keys</strong> created during manufacturing.</li><li><strong>Versatile memory</strong>: Holds temporary keys and other sensitive data.</li><li><strong>Security protections</strong>: Password-locked and resistant to tampering.</li></ul></li><li>TPMs are either:<ul><li>Built into the <strong>motherboard</strong>.</li><li>Installed as a <strong>separate module</strong>.</li></ul></li><li>Each TPM contains a <strong>unique, system-specific key</strong> that cannot be replicated.</li><li>Common uses of TPM:<ul><li><strong>Full disk encryption</strong> (e.g., <code>BitLocker</code>).</li><li><strong>Device authentication</strong> (ensuring a system is genuine).</li><li><strong>Secure boot processes</strong> (verifying system integrity).</li></ul></li><li>TPMs establish a <strong>root of trust</strong>, ensuring the system’s hardware and software haven’t been altered.</li><li>TPM settings can be configured in the <strong>BIOS/UEFI</strong> under <strong>Security</strong> or <strong>TCG (Trusted Computing Group)</strong> options.</li></ul></div><div class="section"><h2>Hardware Security Module (HSM)</h2><ul><li>An <strong>HSM</strong> is a <strong>dedicated hardware device</strong> for managing cryptographic keys at scale.</li><li>Key features of an HSM:<ul><li><strong>Centralized key storage</strong>: Manages keys for multiple systems (e.g., web servers).</li><li><strong>High-performance cryptography</strong>: Accelerates encryption/decryption operations.</li><li><strong>Tamper-resistant design</strong>: Protects against physical and logical attacks.</li><li><strong>Compliance-ready</strong>: Meets industry security standards (e.g., FIPS 140-2).</li></ul></li><li>Types of HSMs:<ul><li><strong>Enterprise HSMs</strong>: High-end devices for data centers, often rack-mounted.</li><li><strong>Personal HSMs</strong>: Portable devices (e.g., for <strong>cryptocurrency</strong> or individual use).</li></ul></li><li>Common use cases for HSMs:<ul><li>Securing <strong>web server SSL/TLS keys</strong>.</li><li>Managing <strong>certificate authority (CA) keys</strong>.</li><li>Offloading cryptographic operations from software to hardware.</li></ul></li></ul></div><div class="section"><h2>TPM vs. HSM: Key Differences</h2><ul><li><strong>TPM</strong>:<ul><li>Designed for <strong>single-system security</strong>.</li><li>Built into or added to a <strong>motherboard</strong>.</li><li>Used for <strong>full disk encryption</strong>, <strong>secure boot</strong>, and <strong>device authentication</strong>.</li></ul></li><li><strong>HSM</strong>:<ul><li>Designed for <strong>enterprise-scale security</strong>.</li><li>Deployed as a <strong>standalone device</strong> in data centers.</li><li>Used for <strong>centralized key management</strong> and <strong>cryptographic acceleration</strong>.</li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/3.1.html" class="nav-button">← Previous Lesson (3.1)</a><a href="pages/3.3.html" class="nav-button">Next Lesson (3.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encryption and Hardware Security - A+ Core 1 (3.2)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Encryption and Hardware Security Modules</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.2</p>
+        </div>
+        <div class="section">
+            <h2>The Role of Encryption in Technology</h2>
+            <ul>
+                <li>Encryption is used to protect <strong>sensitive information</strong> from unauthorized access.</li>
+                <li>Common applications of encryption include:<ul>
+                        <li>Storing data on <strong>mobile phones</strong>, <strong>hard drives</strong>, and
+                            <strong>SSDs</strong>.</li>
+                        <li>Securing <strong>network communications</strong> (e.g., web server interactions).</li>
+                        <li>Transmitting data over <strong>airwaves</strong> (e.g., mobile networks).</li>
+                    </ul>
+                </li>
+                <li>Encryption processes are typically based on <strong>open standards</strong> and <strong>publicly
+                        documented algorithms</strong>.</li>
+                <li>Just as knowing how a <strong>doorknob lock</strong> works doesn’t grant access, understanding
+                    encryption methods doesn’t compromise security—<strong>keys</strong> are required.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Digital Keys and Encryption</h2>
+            <ul>
+                <li>Encryption and decryption rely on <strong>digital keys</strong>, which function like physical keys
+                    for locks.</li>
+                <li>To decrypt data, the correct <strong>unique key</strong> must be used.</li>
+                <li>The challenge: <strong>Protecting the encryption key itself</strong> from unauthorized access.</li>
+                <li>Solutions for key protection include:<ul>
+                        <li><strong>Trusted Platform Module (TPM)</strong> for individual devices.</li>
+                        <li><strong>Hardware Security Module (HSM)</strong> for enterprise environments.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Trusted Platform Module (TPM)</h2>
+            <ul>
+                <li>A <strong>TPM</strong> is a <strong>hardware-based security chip</strong> designed for cryptographic
+                    operations.</li>
+                <li>Key features of a TPM:<ul>
+                        <li><strong>Cryptographic processor</strong>: Handles encryption, decryption, and random number
+                            generation.</li>
+                        <li><strong>Persistent memory</strong>: Stores <strong>burned-in keys</strong> created during
+                            manufacturing.</li>
+                        <li><strong>Versatile memory</strong>: Holds temporary keys and other sensitive data.</li>
+                        <li><strong>Security protections</strong>: Password-locked and resistant to tampering.</li>
+                    </ul>
+                </li>
+                <li>TPMs are either:<ul>
+                        <li>Built into the <strong>motherboard</strong>.</li>
+                        <li>Installed as a <strong>separate module</strong>.</li>
+                    </ul>
+                </li>
+                <li>Each TPM contains a <strong>unique, system-specific key</strong> that cannot be replicated.</li>
+                <li>Common uses of TPM:<ul>
+                        <li><strong>Full disk encryption</strong> (e.g., <code>BitLocker</code>).</li>
+                        <li><strong>Device authentication</strong> (ensuring a system is genuine).</li>
+                        <li><strong>Secure boot processes</strong> (verifying system integrity).</li>
+                    </ul>
+                </li>
+                <li>TPMs establish a <strong>root of trust</strong>, ensuring the system’s hardware and software haven’t
+                    been altered.</li>
+                <li>TPM settings can be configured in the <strong>BIOS/UEFI</strong> under <strong>Security</strong> or
+                    <strong>TCG (Trusted Computing Group)</strong> options.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Hardware Security Module (HSM)</h2>
+            <ul>
+                <li>An <strong>HSM</strong> is a <strong>dedicated hardware device</strong> for managing cryptographic
+                    keys at scale.</li>
+                <li>Key features of an HSM:<ul>
+                        <li><strong>Centralized key storage</strong>: Manages keys for multiple systems (e.g., web
+                            servers).</li>
+                        <li><strong>High-performance cryptography</strong>: Accelerates encryption/decryption
+                            operations.</li>
+                        <li><strong>Tamper-resistant design</strong>: Protects against physical and logical attacks.
+                        </li>
+                        <li><strong>Compliance-ready</strong>: Meets industry security standards (e.g., FIPS 140-2).
+                        </li>
+                    </ul>
+                </li>
+                <li>Types of HSMs:<ul>
+                        <li><strong>Enterprise HSMs</strong>: High-end devices for data centers, often rack-mounted.
+                        </li>
+                        <li><strong>Personal HSMs</strong>: Portable devices (e.g., for <strong>cryptocurrency</strong>
+                            or individual use).</li>
+                    </ul>
+                </li>
+                <li>Common use cases for HSMs:<ul>
+                        <li>Securing <strong>web server SSL/TLS keys</strong>.</li>
+                        <li>Managing <strong>certificate authority (CA) keys</strong>.</li>
+                        <li>Offloading cryptographic operations from software to hardware.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>TPM vs. HSM: Key Differences</h2>
+            <ul>
+                <li><strong>TPM</strong>:<ul>
+                        <li>Designed for <strong>single-system security</strong>.</li>
+                        <li>Built into or added to a <strong>motherboard</strong>.</li>
+                        <li>Used for <strong>full disk encryption</strong>, <strong>secure boot</strong>, and
+                            <strong>device authentication</strong>.</li>
+                    </ul>
+                </li>
+                <li><strong>HSM</strong>:<ul>
+                        <li>Designed for <strong>enterprise-scale security</strong>.</li>
+                        <li>Deployed as a <strong>standalone device</strong> in data centers.</li>
+                        <li>Used for <strong>centralized key management</strong> and <strong>cryptographic
+                                acceleration</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="39.html" class="nav-button">← Previous: BIOS Settings - 3.5</a>
+                <a href="41.html" class="nav-button">Next: CPU Features - 3.5 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,1 +1,140 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>DHCP (Dynamic Host Configuration Protocol) - A+ Core 1 (2.3)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>DHCP (Dynamic Host Configuration Protocol)</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.3</p></div><div class="section"><h2>Introduction to DHCP</h2><ul><li>Before DHCP, network devices required <strong>manual configuration</strong> of IP addresses, subnet masks, default gateways, DNS servers, and other settings.</li><li>Manual configuration is impractical for large networks with thousands of devices.</li><li><strong>DHCP (Dynamic Host Configuration Protocol)</strong> automates IP address assignment, reducing administrative overhead.</li><li>DHCP was introduced in <strong>1997</strong> to streamline network configuration.</li><li>Modern devices (desktops, laptops, mobile devices) automatically request an IP address via DHCP when connecting to a network.</li></ul></div><div class="section"><h2>DHCP Process: DORA</h2><ul><li>The DHCP process follows a four-step workflow known as <strong>DORA</strong>:</li><ul><li><strong>D</strong>iscover</li><li><strong>O</strong>ffer</li><li><strong>R</strong>equest</li><li><strong>A</strong>cknowledge</li></ul><li><strong>Step 1: Discover</strong></li><ul><li>A device (e.g., a laptop) sends a <strong>DHCP Discover</strong> message to locate available DHCP servers.</li><li>The message is sent from <code>0.0.0.0</code> (no IP assigned yet) to <code>255.255.255.255</code> (broadcast address) over <strong>UDP port 68</strong>.</li><li>All devices on the local subnet receive the broadcast, including the DHCP server.</li></ul><li><strong>Step 2: Offer</strong></li><ul><li>The DHCP server responds with a <strong>DHCP Offer</strong>, proposing an available IP address.</li><li>The offer is sent as a broadcast to <code>255.255.255.255</code> over <strong>UDP port 67</strong>.</li><li>If multiple DHCP servers exist, the device may receive multiple offers.</li></ul><li><strong>Step 3: Request</strong></li><ul><li>The device selects an offer and sends a <strong>DHCP Request</strong> to the chosen DHCP server.</li><li>The request is sent from <code>0.0.0.0</code> to <code>255.255.255.255</code> over <strong>UDP port 68</strong>.</li><li>All devices on the subnet receive the request, but only the selected DHCP server processes it.</li></ul><li><strong>Step 4: Acknowledge</strong></li><ul><li>The DHCP server sends a <strong>DHCP Acknowledgment (ACK)</strong>, confirming the IP address assignment.</li><li>The ACK is sent as a broadcast to <code>255.255.255.255</code> over <strong>UDP port 68</strong>.</li><li>The device configures its network interface with the assigned IP address.</li></ul></ul></div><div class="section"><h2>DHCP Scope and Configuration</h2><ul><li>A <strong>DHCP scope</strong> defines the range of IP addresses and configuration settings a DHCP server can assign.</li><li>Key components of a DHCP scope:</li><ul><li><strong>IP Address Pool</strong>: A range of available IP addresses (e.g., <code>192.168.1.100-192.168.1.200</code>).</li><li><strong>Exclusions</strong>: IP addresses reserved for static devices (e.g., routers, servers).</li><li><strong>Subnet Mask</strong>: Defines the network portion of the IP address.</li><li><strong>Lease Duration</strong>: How long a device can use an assigned IP address before renewal.</li><li><strong>Additional Options</strong>: Default gateway, DNS servers, VoIP server addresses, etc.</li></ul><li>DHCP scopes can be configured on servers (e.g., Windows Server) or network devices (e.g., routers).</li><li>Example of a DHCP scope on a router:</li><ul><li>Address pool: <code>192.168.1.2-192.168.1.254</code>.</li><li>Exclusions: <code>192.168.1.1</code> (router), <code>192.168.1.6</code> (reserved for a server).</li></ul></ul></div><div class="section"><h2>DHCP Reservations</h2><ul><li>A <strong>DHCP reservation</strong> ensures a specific device always receives the same IP address.</li><li>Useful for servers, printers, or network devices requiring consistent IP assignments.</li><li>Reservations are based on the device's <strong>MAC address</strong>.</li><li>Example:</li><ul><li>Device <strong>Prometheus</strong> (MAC: <code>00:1A:2B:3C:4D:5E</code>) is reserved <code>192.168.1.6</code>.</li><li>Device <strong>Odyssey</strong> (MAC: <code>00:1A:2B:3C:4D:5F</code>) is reserved <code>192.168.1.9</code>.</li></ul><li>Reservations simplify network management by centralizing IP assignments in the DHCP server.</li></ul></div><div class="section"><h2>Key Takeaways</h2><ul><li>DHCP automates IP address assignment, reducing manual configuration errors.</li><li>The <strong>DORA</strong> process ensures devices receive an IP address efficiently.</li><li>A <strong>DHCP scope</strong> defines available IP addresses, exclusions, and configuration options.</li><li><strong>DHCP reservations</strong> allow specific devices to retain the same IP address.</li><li>Understanding DHCP is essential for network administration and troubleshooting.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/2.2.html" class="nav-button">← Previous Lesson (2.2)</a><a href="pages/2.4.html" class="nav-button">Next Lesson (2.4) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DHCP (Dynamic Host Configuration Protocol) - A+ Core 1 (2.3)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>DHCP (Dynamic Host Configuration Protocol)</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.3</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to DHCP</h2>
+            <ul>
+                <li>Before DHCP, network devices required <strong>manual configuration</strong> of IP addresses, subnet
+                    masks, default gateways, DNS servers, and other settings.</li>
+                <li>Manual configuration is impractical for large networks with thousands of devices.</li>
+                <li><strong>DHCP (Dynamic Host Configuration Protocol)</strong> automates IP address assignment,
+                    reducing administrative overhead.</li>
+                <li>DHCP was introduced in <strong>1997</strong> to streamline network configuration.</li>
+                <li>Modern devices (desktops, laptops, mobile devices) automatically request an IP address via DHCP when
+                    connecting to a network.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DHCP Process: DORA</h2>
+            <ul>
+                <li>The DHCP process follows a four-step workflow known as <strong>DORA</strong>:</li>
+                <ul>
+                    <li><strong>D</strong>iscover</li>
+                    <li><strong>O</strong>ffer</li>
+                    <li><strong>R</strong>equest</li>
+                    <li><strong>A</strong>cknowledge</li>
+                </ul>
+                <li><strong>Step 1: Discover</strong></li>
+                <ul>
+                    <li>A device (e.g., a laptop) sends a <strong>DHCP Discover</strong> message to locate available
+                        DHCP servers.</li>
+                    <li>The message is sent from <code>0.0.0.0</code> (no IP assigned yet) to
+                        <code>255.255.255.255</code> (broadcast address) over <strong>UDP port 68</strong>.</li>
+                    <li>All devices on the local subnet receive the broadcast, including the DHCP server.</li>
+                </ul>
+                <li><strong>Step 2: Offer</strong></li>
+                <ul>
+                    <li>The DHCP server responds with a <strong>DHCP Offer</strong>, proposing an available IP address.
+                    </li>
+                    <li>The offer is sent as a broadcast to <code>255.255.255.255</code> over <strong>UDP port
+                            67</strong>.</li>
+                    <li>If multiple DHCP servers exist, the device may receive multiple offers.</li>
+                </ul>
+                <li><strong>Step 3: Request</strong></li>
+                <ul>
+                    <li>The device selects an offer and sends a <strong>DHCP Request</strong> to the chosen DHCP server.
+                    </li>
+                    <li>The request is sent from <code>0.0.0.0</code> to <code>255.255.255.255</code> over <strong>UDP
+                            port 68</strong>.</li>
+                    <li>All devices on the subnet receive the request, but only the selected DHCP server processes it.
+                    </li>
+                </ul>
+                <li><strong>Step 4: Acknowledge</strong></li>
+                <ul>
+                    <li>The DHCP server sends a <strong>DHCP Acknowledgment (ACK)</strong>, confirming the IP address
+                        assignment.</li>
+                    <li>The ACK is sent as a broadcast to <code>255.255.255.255</code> over <strong>UDP port
+                            68</strong>.</li>
+                    <li>The device configures its network interface with the assigned IP address.</li>
+                </ul>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DHCP Scope and Configuration</h2>
+            <ul>
+                <li>A <strong>DHCP scope</strong> defines the range of IP addresses and configuration settings a DHCP
+                    server can assign.</li>
+                <li>Key components of a DHCP scope:</li>
+                <ul>
+                    <li><strong>IP Address Pool</strong>: A range of available IP addresses (e.g.,
+                        <code>192.168.1.100-192.168.1.200</code>).</li>
+                    <li><strong>Exclusions</strong>: IP addresses reserved for static devices (e.g., routers, servers).
+                    </li>
+                    <li><strong>Subnet Mask</strong>: Defines the network portion of the IP address.</li>
+                    <li><strong>Lease Duration</strong>: How long a device can use an assigned IP address before
+                        renewal.</li>
+                    <li><strong>Additional Options</strong>: Default gateway, DNS servers, VoIP server addresses, etc.
+                    </li>
+                </ul>
+                <li>DHCP scopes can be configured on servers (e.g., Windows Server) or network devices (e.g., routers).
+                </li>
+                <li>Example of a DHCP scope on a router:</li>
+                <ul>
+                    <li>Address pool: <code>192.168.1.2-192.168.1.254</code>.</li>
+                    <li>Exclusions: <code>192.168.1.1</code> (router), <code>192.168.1.6</code> (reserved for a server).
+                    </li>
+                </ul>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>DHCP Reservations</h2>
+            <ul>
+                <li>A <strong>DHCP reservation</strong> ensures a specific device always receives the same IP address.
+                </li>
+                <li>Useful for servers, printers, or network devices requiring consistent IP assignments.</li>
+                <li>Reservations are based on the device's <strong>MAC address</strong>.</li>
+                <li>Example:</li>
+                <ul>
+                    <li>Device <strong>Prometheus</strong> (MAC: <code>00:1A:2B:3C:4D:5E</code>) is reserved
+                        <code>192.168.1.6</code>.</li>
+                    <li>Device <strong>Odyssey</strong> (MAC: <code>00:1A:2B:3C:4D:5F</code>) is reserved
+                        <code>192.168.1.9</code>.</li>
+                </ul>
+                <li>Reservations simplify network management by centralizing IP assignments in the DHCP server.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Key Takeaways</h2>
+            <ul>
+                <li>DHCP automates IP address assignment, reducing manual configuration errors.</li>
+                <li>The <strong>DORA</strong> process ensures devices receive an IP address efficiently.</li>
+                <li>A <strong>DHCP scope</strong> defines available IP addresses, exclusions, and configuration options.
+                </li>
+                <li><strong>DHCP reservations</strong> allow specific devices to retain the same IP address.</li>
+                <li>Understanding DHCP is essential for network administration and troubleshooting.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="10.html" class="nav-button">← Previous: DNS Configuration - 2.4</a>
+                <a href="12.html" class="nav-button">Next: VLANs and VPNs - 2.4 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

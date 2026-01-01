@@ -1,1 +1,119 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Mobile Device Management (MDM) - A+ Core 1 (3.4)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Mobile Device Management (MDM)</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.4</p></div><div class="section"><h2>Introduction to Mobile Device Management (MDM)</h2><ul><li>MDM (<strong>Mobile Device Manager</strong>) is specialized software used to centrally manage mobile devices in an organization.</li><li>Allows management of both <strong>company-owned</strong> and <strong>personally owned (BYOD)</strong> devices.</li><li>Provides system administrators with control over device policies, security settings, and application management.</li></ul></div><div class="section"><h2>Key Functions of MDM</h2><ul><li><strong>Policy Enforcement</strong>: Set rules for device usage, such as allowed/disallowed applications and disabled features (e.g., camera, GPS).</li><li><strong>Data Partitioning</strong>: Creates a separate, secure area on personal devices for corporate data while keeping personal data private.</li><li><strong>Security Policies</strong>: Enforces requirements like <strong>screen locks</strong>, <strong>PINs</strong>, or <strong>biometric authentication</strong>.</li><li><strong>Application Management</strong>: Controls which apps can be installed, blocks unauthorized apps, and can push required apps automatically.</li><li><strong>Remote Configuration</strong>: Automatically configures settings like email, Wi-Fi, and VPN without user intervention.</li><li><strong>Device Monitoring</strong>: Tracks device status, OS version, security settings, and network usage.</li><li><strong>Data Synchronization</strong>: Manages how and when data (e.g., emails, contacts, calendars) syncs over Wi-Fi or cellular networks.</li><li><strong>Lost Device Management</strong>: Enables remote wipe or lock of corporate data if a device is lost or stolen.</li></ul></div><div class="section"><h2>BYOD (Bring Your Own Device)</h2><ul><li>Employees use their <strong>personal devices</strong> for work purposes.</li><li>Benefits: Convenience for employees (no need to carry two devices), cost savings for organizations.</li><li>Challenges: Balancing <strong>corporate security</strong> with <strong>user privacy</strong>.</li><li>MDM solutions create a <strong>partitioned workspace</strong> on personal devices to separate work and personal data.</li><li>Policies define what happens to corporate data if the device is lost, upgraded, or traded in.</li></ul></div><div class="section"><h2>COPE (Corporate Owned, Personally Enabled)</h2><ul><li>The <strong>company purchases and owns</strong> the device but allows personal use.</li><li>Provides <strong>full control</strong> over the device while still offering flexibility for employees.</li><li>Similar to how organizations manage laptops or desktops, with strict policies on data storage and security.</li><li>Company determines what happens to data if the device is lost, replaced, or reassigned.</li></ul></div><div class="section"><h2>CYOD (Choose Your Own Device)</h2><ul><li>Employees select a device from a <strong>pre-approved list</strong> provided by the organization.</li><li>Combines flexibility for users with <strong>standardized management</strong> for IT teams.</li><li>Reduces compatibility issues while still offering some user choice.</li></ul></div><div class="section"><h2>MDM Console and Features</h2><ul><li><strong>Centralized Dashboard</strong>: View and manage all devices, including device name, platform, user, email, and <strong>IMEI</strong> (unique identifier).</li><li><strong>Device-Specific Settings</strong>: Configure restrictions such as disabling the camera, FaceTime, Siri, or voice dialing.</li><li><strong>Security Controls</strong>: Enforce <strong>two-factor authentication (2FA)</strong>, multi-factor authentication (MFA), and encryption.</li><li><strong>Over-the-Air (OTA) Synchronization</strong>: Manage backups, restores, and data sync settings (e.g., Wi-Fi vs. cellular).</li><li><strong>Granular Sync Settings</strong>: Specify which data types (e.g., mail, contacts, calendars) sync and under what conditions.</li><li><strong>Application Deployment</strong>: Push required business apps (e.g., Outlook, cloud storage) to devices automatically.</li></ul></div><div class="section"><h2>Best Practices for MDM Implementation</h2><ul><li>Define clear <strong>usage policies</strong> for company-owned and personal devices.</li><li>Ensure <strong>compliance</strong> with industry regulations (e.g., GDPR, HIPAA).</li><li>Regularly update <strong>security policies</strong> to address emerging threats.</li><li>Provide <strong>user training</strong> on device security and MDM features.</li><li>Monitor device compliance and enforce policies consistently.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/3.3.html" class="nav-button">← Previous Lesson (3.3)</a><a href="pages/3.5.html" class="nav-button">Next Lesson (3.5) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Device Management (MDM) - A+ Core 1 (3.4)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Mobile Device Management (MDM)</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.4</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to Mobile Device Management (MDM)</h2>
+            <ul>
+                <li>MDM (<strong>Mobile Device Manager</strong>) is specialized software used to centrally manage mobile
+                    devices in an organization.</li>
+                <li>Allows management of both <strong>company-owned</strong> and <strong>personally owned
+                        (BYOD)</strong> devices.</li>
+                <li>Provides system administrators with control over device policies, security settings, and application
+                    management.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Key Functions of MDM</h2>
+            <ul>
+                <li><strong>Policy Enforcement</strong>: Set rules for device usage, such as allowed/disallowed
+                    applications and disabled features (e.g., camera, GPS).</li>
+                <li><strong>Data Partitioning</strong>: Creates a separate, secure area on personal devices for
+                    corporate data while keeping personal data private.</li>
+                <li><strong>Security Policies</strong>: Enforces requirements like <strong>screen locks</strong>,
+                    <strong>PINs</strong>, or <strong>biometric authentication</strong>.
+                </li>
+                <li><strong>Application Management</strong>: Controls which apps can be installed, blocks unauthorized
+                    apps, and can push required apps automatically.</li>
+                <li><strong>Remote Configuration</strong>: Automatically configures settings like email, Wi-Fi, and VPN
+                    without user intervention.</li>
+                <li><strong>Device Monitoring</strong>: Tracks device status, OS version, security settings, and network
+                    usage.</li>
+                <li><strong>Data Synchronization</strong>: Manages how and when data (e.g., emails, contacts, calendars)
+                    syncs over Wi-Fi or cellular networks.</li>
+                <li><strong>Lost Device Management</strong>: Enables remote wipe or lock of corporate data if a device
+                    is lost or stolen.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>BYOD (Bring Your Own Device)</h2>
+            <ul>
+                <li>Employees use their <strong>personal devices</strong> for work purposes.</li>
+                <li>Benefits: Convenience for employees (no need to carry two devices), cost savings for organizations.
+                </li>
+                <li>Challenges: Balancing <strong>corporate security</strong> with <strong>user privacy</strong>.</li>
+                <li>MDM solutions create a <strong>partitioned workspace</strong> on personal devices to separate work
+                    and personal data.</li>
+                <li>Policies define what happens to corporate data if the device is lost, upgraded, or traded in.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>COPE (Corporate Owned, Personally Enabled)</h2>
+            <ul>
+                <li>The <strong>company purchases and owns</strong> the device but allows personal use.</li>
+                <li>Provides <strong>full control</strong> over the device while still offering flexibility for
+                    employees.</li>
+                <li>Similar to how organizations manage laptops or desktops, with strict policies on data storage and
+                    security.</li>
+                <li>Company determines what happens to data if the device is lost, replaced, or reassigned.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>CYOD (Choose Your Own Device)</h2>
+            <ul>
+                <li>Employees select a device from a <strong>pre-approved list</strong> provided by the organization.
+                </li>
+                <li>Combines flexibility for users with <strong>standardized management</strong> for IT teams.</li>
+                <li>Reduces compatibility issues while still offering some user choice.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>MDM Console and Features</h2>
+            <ul>
+                <li><strong>Centralized Dashboard</strong>: View and manage all devices, including device name,
+                    platform, user, email, and <strong>IMEI</strong> (unique identifier).</li>
+                <li><strong>Device-Specific Settings</strong>: Configure restrictions such as disabling the camera,
+                    FaceTime, Siri, or voice dialing.</li>
+                <li><strong>Security Controls</strong>: Enforce <strong>two-factor authentication (2FA)</strong>,
+                    multi-factor authentication (MFA), and encryption.</li>
+                <li><strong>Over-the-Air (OTA) Synchronization</strong>: Manage backups, restores, and data sync
+                    settings (e.g., Wi-Fi vs. cellular).</li>
+                <li><strong>Granular Sync Settings</strong>: Specify which data types (e.g., mail, contacts, calendars)
+                    sync and under what conditions.</li>
+                <li><strong>Application Deployment</strong>: Push required business apps (e.g., Outlook, cloud storage)
+                    to devices automatically.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Best Practices for MDM Implementation</h2>
+            <ul>
+                <li>Define clear <strong>usage policies</strong> for company-owned and personal devices.</li>
+                <li>Ensure <strong>compliance</strong> with industry regulations (e.g., GDPR, HIPAA).</li>
+                <li>Regularly update <strong>security policies</strong> to address emerging threats.</li>
+                <li>Provide <strong>user training</strong> on device security and MDM features.</li>
+                <li>Monitor device compliance and enforce policies consistently.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="4.html" class="nav-button">← Previous: Mobile Device Networks - 1.3</a>
+                <a href="6.html" class="nav-button">Next: Introduction to IP - 2.1 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

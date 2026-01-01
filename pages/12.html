@@ -1,1 +1,114 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Local Area Networks and VLANs - A+ Core 1 (2.1)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Local Area Networks (LANs) and Virtual LANs (VLANs)</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p></div><div class="section"><h2>Introduction to Local Area Networks (LANs)</h2><ul><li>A <strong>Local Area Network (LAN)</strong> is a group of devices connected together in a single <strong>broadcast domain</strong>.</li><li>In a LAN, if one device sends a <strong>broadcast</strong>, all other devices in the same LAN will receive it.</li><li>Devices on separate switches are in separate broadcast domains, meaning broadcasts from one network are not visible to devices on another network.</li><li>This design enhances <strong>security</strong> and <strong>organization</strong> by logically separating networks (e.g., <code>Red Network</code> and <code>Blue Network</code>).</li></ul></div><div class="section"><h2>Challenges with Physical LAN Segmentation</h2><ul><li>Using separate physical switches for each LAN can lead to inefficient use of resources (e.g., a 24-port switch with only two devices connected).</li><li>Consolidating devices onto a single switch improves <strong>cost efficiency</strong> and <strong>space utilization</strong> but creates a single broadcast domain, which may not be desirable.</li></ul></div><div class="section"><h2>Introduction to Virtual LANs (VLANs)</h2><ul><li>A <strong>Virtual Local Area Network (VLAN)</strong> allows a single physical switch to be divided into multiple logical broadcast domains.</li><li>Interfaces on a switch can be assigned to different VLANs, creating separate broadcast domains within the same physical device.</li><li>Example: A switch can have some ports assigned to a <code>Red VLAN</code> and others to a <code>Blue VLAN</code>, ensuring broadcasts from one VLAN are not visible to the other.</li><li>Benefits of VLANs:<ul><li>Reduces the need for multiple physical switches.</li><li>Improves <strong>scalability</strong> and <strong>flexibility</strong> in network design.</li><li>Supports multiple VLANs on a single switch (e.g., <code>VLAN 1: Gate Room</code>, <code>VLAN 2: Dialing Room</code>, <code>VLAN 3: Infirmary</code>).</li></ul></li></ul></div><div class="section"><h2>VLAN Communication and Routing</h2><ul><li>By default, devices in one VLAN <strong>cannot communicate</strong> with devices in another VLAN because they are in separate broadcast domains.</li><li>To enable inter-VLAN communication, a <strong>router</strong> is required to route traffic between VLANs.</li><li>Some switches support <strong>Layer 3 routing</strong>, allowing them to perform inter-VLAN routing internally.</li><li>Alternatively, an external router can be used to facilitate communication between VLANs.</li></ul></div><div class="section"><h2>Virtual Private Networks (VPNs)</h2><ul><li>A <strong>Virtual Private Network (VPN)</strong> encrypts data transmitted over a network, ensuring <strong>confidentiality</strong> and <strong>security</strong>.</li><li>VPNs prevent unauthorized users from interpreting captured data, even if intercepted.</li><li>A <strong>VPN concentrator</strong> is a specialized device (often integrated into a firewall or appliance) that handles encryption and decryption of VPN traffic.</li><li>VPN concentrators can be hardware-based or software-based (e.g., running on a server).</li></ul></div><div class="section"><h2>Types of VPNs</h2><ul><li><strong>Client-to-Site VPN</strong>:<ul><li>Used by remote users (e.g., working from home) to connect to a corporate network.</li><li>The remote device (client) connects to a VPN concentrator at the corporate network edge.</li><li>All traffic between the client and concentrator is encrypted.</li><li>Can be configured as <strong>always-on</strong>, automatically establishing a secure connection upon device startup.</li></ul></li><li><strong>Site-to-Site VPN</strong>:<ul><li>Connects entire networks (e.g., a remote office to a corporate headquarters) over the internet.</li><li>Typically implemented using firewalls at each site to establish an encrypted tunnel.</li><li>Ensures all traffic between sites is encrypted while remaining unencrypted within each local network.</li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Area Networks and VLANs - A+ Core 1 (2.1)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Local Area Networks (LANs) and Virtual LANs (VLANs)</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to Local Area Networks (LANs)</h2>
+            <ul>
+                <li>A <strong>Local Area Network (LAN)</strong> is a group of devices connected together in a single
+                    <strong>broadcast domain</strong>.</li>
+                <li>In a LAN, if one device sends a <strong>broadcast</strong>, all other devices in the same LAN will
+                    receive it.</li>
+                <li>Devices on separate switches are in separate broadcast domains, meaning broadcasts from one network
+                    are not visible to devices on another network.</li>
+                <li>This design enhances <strong>security</strong> and <strong>organization</strong> by logically
+                    separating networks (e.g., <code>Red Network</code> and <code>Blue Network</code>).</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Challenges with Physical LAN Segmentation</h2>
+            <ul>
+                <li>Using separate physical switches for each LAN can lead to inefficient use of resources (e.g., a
+                    24-port switch with only two devices connected).</li>
+                <li>Consolidating devices onto a single switch improves <strong>cost efficiency</strong> and
+                    <strong>space utilization</strong> but creates a single broadcast domain, which may not be
+                    desirable.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Introduction to Virtual LANs (VLANs)</h2>
+            <ul>
+                <li>A <strong>Virtual Local Area Network (VLAN)</strong> allows a single physical switch to be divided
+                    into multiple logical broadcast domains.</li>
+                <li>Interfaces on a switch can be assigned to different VLANs, creating separate broadcast domains
+                    within the same physical device.</li>
+                <li>Example: A switch can have some ports assigned to a <code>Red VLAN</code> and others to a
+                    <code>Blue VLAN</code>, ensuring broadcasts from one VLAN are not visible to the other.</li>
+                <li>Benefits of VLANs:<ul>
+                        <li>Reduces the need for multiple physical switches.</li>
+                        <li>Improves <strong>scalability</strong> and <strong>flexibility</strong> in network design.
+                        </li>
+                        <li>Supports multiple VLANs on a single switch (e.g., <code>VLAN 1: Gate Room</code>,
+                            <code>VLAN 2: Dialing Room</code>, <code>VLAN 3: Infirmary</code>).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>VLAN Communication and Routing</h2>
+            <ul>
+                <li>By default, devices in one VLAN <strong>cannot communicate</strong> with devices in another VLAN
+                    because they are in separate broadcast domains.</li>
+                <li>To enable inter-VLAN communication, a <strong>router</strong> is required to route traffic between
+                    VLANs.</li>
+                <li>Some switches support <strong>Layer 3 routing</strong>, allowing them to perform inter-VLAN routing
+                    internally.</li>
+                <li>Alternatively, an external router can be used to facilitate communication between VLANs.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Virtual Private Networks (VPNs)</h2>
+            <ul>
+                <li>A <strong>Virtual Private Network (VPN)</strong> encrypts data transmitted over a network, ensuring
+                    <strong>confidentiality</strong> and <strong>security</strong>.</li>
+                <li>VPNs prevent unauthorized users from interpreting captured data, even if intercepted.</li>
+                <li>A <strong>VPN concentrator</strong> is a specialized device (often integrated into a firewall or
+                    appliance) that handles encryption and decryption of VPN traffic.</li>
+                <li>VPN concentrators can be hardware-based or software-based (e.g., running on a server).</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Types of VPNs</h2>
+            <ul>
+                <li><strong>Client-to-Site VPN</strong>:<ul>
+                        <li>Used by remote users (e.g., working from home) to connect to a corporate network.</li>
+                        <li>The remote device (client) connects to a VPN concentrator at the corporate network edge.
+                        </li>
+                        <li>All traffic between the client and concentrator is encrypted.</li>
+                        <li>Can be configured as <strong>always-on</strong>, automatically establishing a secure
+                            connection upon device startup.</li>
+                    </ul>
+                </li>
+                <li><strong>Site-to-Site VPN</strong>:<ul>
+                        <li>Connects entire networks (e.g., a remote office to a corporate headquarters) over the
+                            internet.</li>
+                        <li>Typically implemented using firewalls at each site to establish an encrypted tunnel.</li>
+                        <li>Ensures all traffic between sites is encrypted while remaining unencrypted within each local
+                            network.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="11.html" class="nav-button">← Previous: DHCP - 2.4</a>
+                <a href="13.html" class="nav-button">Next: Network Devices - 2.5 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

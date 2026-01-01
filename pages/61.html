@@ -1,1 +1,143 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Network Troubleshooting Methodology - A+ Core 1 (2.5)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Network Troubleshooting Methodology</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.5</p></div><div class="section"><h2>Initial Network Troubleshooting Steps</h2><ul><li>Check for a <strong>link light</strong> on the Ethernet connection (wired networks).<ul><li>If present, indicates a physical connection to the network device.</li><li>If absent, check the cable, port, or device connection.</li></ul></li><li>Ping the <strong>loopback address</strong> (<code>127.0.0.1</code>) to verify the IP stack is functioning.<ul><li>No response indicates a local OS/network configuration issue.</li></ul></li><li>Ping the <strong>local IP address</strong> (DHCP-assigned or static) to confirm local connectivity.</li><li>Ping the <strong>default gateway</strong> to test local network communication.</li><li>Ping an external IP (e.g., <code>8.8.8.8</code>, <code>9.9.9.9</code>, <code>1.1.1.1</code>) to verify internet connectivity.</li></ul></div><div class="section"><h2>Wireless Network Troubleshooting</h2><ul><li>Check for <strong>interference</strong> from other devices (microwaves, cordless phones, fluorescent lights).</li><li>Adjust the <strong>wireless channel</strong> to avoid congestion.<ul><li>Access points may auto-select channels or allow manual configuration.</li></ul></li><li>Improve signal strength by:<ul><li>Moving closer to the access point.</li><li>Using external antennas or upgrading access point antennas.</li><li>Relocating the access point to a centralized location.</li></ul></li><li>Address <strong>multipath interference</strong> caused by signal reflections off flat surfaces.<ul><li>Reposition the access point or adjust antenna orientation.</li></ul></li><li>Monitor <strong>signal-to-noise ratio (SNR)</strong> to assess wireless performance.<ul><li>Higher SNR (more signal, less noise) improves reliability.</li><li>Low SNR causes poor connectivity and slow speeds.</li></ul></li></ul></div><div class="section"><h2>Performance and Latency Issues</h2><ul><li>Use <strong>ping</strong> to measure response times and identify latency.<ul><li>High latency may indicate network congestion or device processing delays.</li></ul></li><li>Run a <strong>speed test</strong> to evaluate bandwidth and throughput.</li><li>Check <strong>network utilization</strong> and error rates on each hop.<ul><li>High utilization or errors may require hardware upgrades.</li></ul></li><li>Perform a <strong>traceroute</strong> to identify slow or failing network segments.</li><li>Capture <strong>packet traces</strong> to analyze traffic patterns and pinpoint bottlenecks.</li><li>Measure <strong>jitter</strong> for real-time applications (VoIP, video conferencing).<ul><li>High jitter causes choppy audio/video due to inconsistent packet delivery.</li><li>Low jitter ensures smooth, real-time communication.</li></ul></li></ul></div><div class="section"><h2>Connectivity and Authentication Issues</h2><ul><li>Check for <strong>APIPA addresses</strong> (<code>169.254.x.x</code>) indicating DHCP failure.<ul><li>Results in "Limited or No Connectivity" errors.</li><li>Verify DHCP server availability or configure a static IP.</li></ul></li><li>Test connectivity progressively:<ol><li>Local IP address.</li><li>Default gateway.</li><li>External IP (e.g., <code>8.8.8.8</code>).</li></ol></li><li>Troubleshoot <strong>authentication issues</strong> for resource access.<ul><li>Verify credentials (username/password, MFA).</li><li>Check for expired sessions or background service authentication failures.</li><li>Review packet captures for "access denied" responses.</li></ul></li></ul></div><div class="section"><h2>Physical and Intermittent Issues</h2><ul><li>Address <strong>port flapping</strong> (intermittent link up/down).<ul><li>Check cables, connectors, or switch ports.</li><li>Replace cables or test different switch ports.</li></ul></li><li>Troubleshoot <strong>intermittent connectivity</strong> with ongoing tests:<ul><li>Continuous ping (<code>ping -t [IP]</code>).</li><li>Periodic traceroutes or speed tests.</li><li>Collaborate with third-party providers if the issue is external.</li></ul></li><li>Review <strong>Service Level Agreements (SLAs)</strong> for uptime and support expectations.</li></ul></div><div class="section"><h2>Key Troubleshooting Tools</h2><ul><li><strong>Ping</strong>: Test connectivity and latency.</li><li><strong>Traceroute</strong>: Identify network path and latency per hop.</li><li><strong>Packet Capture</strong>: Analyze traffic for errors, delays, or misconfigurations.</li><li><strong>Speed Test</strong>: Measure bandwidth and performance.</li><li><strong>Signal-to-Noise Ratio (SNR) Tools</strong>: Assess wireless interference.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/2.4.html" class="nav-button">← Previous Lesson (2.4)</a><a href="pages/2.6.html" class="nav-button">Next Lesson (2.6) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Troubleshooting Methodology - A+ Core 1 (2.5)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Network Troubleshooting Methodology</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.5</p>
+        </div>
+        <div class="section">
+            <h2>Initial Network Troubleshooting Steps</h2>
+            <ul>
+                <li>Check for a <strong>link light</strong> on the Ethernet connection (wired networks).<ul>
+                        <li>If present, indicates a physical connection to the network device.</li>
+                        <li>If absent, check the cable, port, or device connection.</li>
+                    </ul>
+                </li>
+                <li>Ping the <strong>loopback address</strong> (<code>127.0.0.1</code>) to verify the IP stack is
+                    functioning.<ul>
+                        <li>No response indicates a local OS/network configuration issue.</li>
+                    </ul>
+                </li>
+                <li>Ping the <strong>local IP address</strong> (DHCP-assigned or static) to confirm local connectivity.
+                </li>
+                <li>Ping the <strong>default gateway</strong> to test local network communication.</li>
+                <li>Ping an external IP (e.g., <code>8.8.8.8</code>, <code>9.9.9.9</code>, <code>1.1.1.1</code>) to
+                    verify internet connectivity.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Wireless Network Troubleshooting</h2>
+            <ul>
+                <li>Check for <strong>interference</strong> from other devices (microwaves, cordless phones, fluorescent
+                    lights).</li>
+                <li>Adjust the <strong>wireless channel</strong> to avoid congestion.<ul>
+                        <li>Access points may auto-select channels or allow manual configuration.</li>
+                    </ul>
+                </li>
+                <li>Improve signal strength by:<ul>
+                        <li>Moving closer to the access point.</li>
+                        <li>Using external antennas or upgrading access point antennas.</li>
+                        <li>Relocating the access point to a centralized location.</li>
+                    </ul>
+                </li>
+                <li>Address <strong>multipath interference</strong> caused by signal reflections off flat surfaces.<ul>
+                        <li>Reposition the access point or adjust antenna orientation.</li>
+                    </ul>
+                </li>
+                <li>Monitor <strong>signal-to-noise ratio (SNR)</strong> to assess wireless performance.<ul>
+                        <li>Higher SNR (more signal, less noise) improves reliability.</li>
+                        <li>Low SNR causes poor connectivity and slow speeds.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Performance and Latency Issues</h2>
+            <ul>
+                <li>Use <strong>ping</strong> to measure response times and identify latency.<ul>
+                        <li>High latency may indicate network congestion or device processing delays.</li>
+                    </ul>
+                </li>
+                <li>Run a <strong>speed test</strong> to evaluate bandwidth and throughput.</li>
+                <li>Check <strong>network utilization</strong> and error rates on each hop.<ul>
+                        <li>High utilization or errors may require hardware upgrades.</li>
+                    </ul>
+                </li>
+                <li>Perform a <strong>traceroute</strong> to identify slow or failing network segments.</li>
+                <li>Capture <strong>packet traces</strong> to analyze traffic patterns and pinpoint bottlenecks.</li>
+                <li>Measure <strong>jitter</strong> for real-time applications (VoIP, video conferencing).<ul>
+                        <li>High jitter causes choppy audio/video due to inconsistent packet delivery.</li>
+                        <li>Low jitter ensures smooth, real-time communication.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Connectivity and Authentication Issues</h2>
+            <ul>
+                <li>Check for <strong>APIPA addresses</strong> (<code>169.254.x.x</code>) indicating DHCP failure.<ul>
+                        <li>Results in "Limited or No Connectivity" errors.</li>
+                        <li>Verify DHCP server availability or configure a static IP.</li>
+                    </ul>
+                </li>
+                <li>Test connectivity progressively:<ol>
+                        <li>Local IP address.</li>
+                        <li>Default gateway.</li>
+                        <li>External IP (e.g., <code>8.8.8.8</code>).</li>
+                    </ol>
+                </li>
+                <li>Troubleshoot <strong>authentication issues</strong> for resource access.<ul>
+                        <li>Verify credentials (username/password, MFA).</li>
+                        <li>Check for expired sessions or background service authentication failures.</li>
+                        <li>Review packet captures for "access denied" responses.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Physical and Intermittent Issues</h2>
+            <ul>
+                <li>Address <strong>port flapping</strong> (intermittent link up/down).<ul>
+                        <li>Check cables, connectors, or switch ports.</li>
+                        <li>Replace cables or test different switch ports.</li>
+                    </ul>
+                </li>
+                <li>Troubleshoot <strong>intermittent connectivity</strong> with ongoing tests:<ul>
+                        <li>Continuous ping (<code>ping -t [IP]</code>).</li>
+                        <li>Periodic traceroutes or speed tests.</li>
+                        <li>Collaborate with third-party providers if the issue is external.</li>
+                    </ul>
+                </li>
+                <li>Review <strong>Service Level Agreements (SLAs)</strong> for uptime and support expectations.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Key Troubleshooting Tools</h2>
+            <ul>
+                <li><strong>Ping</strong>: Test connectivity and latency.</li>
+                <li><strong>Traceroute</strong>: Identify network path and latency per hop.</li>
+                <li><strong>Packet Capture</strong>: Analyze traffic for errors, delays, or misconfigurations.</li>
+                <li><strong>Speed Test</strong>: Measure bandwidth and performance.</li>
+                <li><strong>Signal-to-Noise Ratio (SNR) Tools</strong>: Assess wireless interference.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="60.html" class="nav-button">← Previous: Troubleshooting Mobile Devices - 5.4</a>
+                <a href="62.html" class="nav-button">Next: Troubleshooting Printers - 5.6 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

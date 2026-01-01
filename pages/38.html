@@ -1,1 +1,134 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>BIOS and UEFI - A+ Core 1 (3.2)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>BIOS and UEFI</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.2</p></div><div class="section"><h2>Introduction to BIOS</h2><ul><li>The <strong>BIOS</strong> (Basic Input Output System) is the first software that runs when you start your computer, appearing before the operating system loads.</li><li>Also referred to as <strong>firmware</strong>, <strong>system BIOS</strong>, or <strong>ROM BIOS</strong> (historically stored in Read-Only Memory).</li><li>Modern systems store the BIOS in <strong>flash memory</strong> on the motherboard, allowing for updates.</li><li>The BIOS initializes hardware and prepares the system to load the operating system.</li></ul></div><div class="section"><h2>Power On Self Test (POST)</h2><ul><li>The <strong>POST</strong> (Power On Self Test) is the diagnostic process performed by the BIOS during startup.</li><li>Checks for essential hardware components, including:<ul><li>CPU</li><li>Memory (RAM)</li><li>Keyboard and mouse</li><li>Storage devices</li></ul></li><li>If any critical hardware fails initialization, an <strong>error message</strong> or beep code is displayed.</li><li>The POST process typically completes within a few seconds before proceeding to load the operating system.</li></ul></div><div class="section"><h2>Bootloader and Operating System Selection</h2><ul><li>After POST completes, the system either:<ul><li>Automatically loads the operating system, or</li><li>Displays a <strong>bootloader</strong> prompt to select an operating system (if multiple are installed).</li></ul></li><li>The bootloader signifies that POST has finished and the system is ready to load the OS.</li></ul></div><div class="section"><h2>BIOS Storage and Redundancy</h2><ul><li>Modern motherboards store the BIOS in <strong>flash memory</strong>, enabling updates and modifications.</li><li>Some motherboards include <strong>dual BIOS chips</strong> (main and backup) to prevent failure during updates.</li><li>If an update fails, the backup BIOS can restore functionality.</li></ul></div><div class="section"><h2>Legacy BIOS</h2><ul><li>Used in older systems (over 25 years old) and designed for legacy hardware.</li><li>Limitations include:<ul><li>Lack of support for modern hardware components.</li><li>Text-based interface requiring keyboard navigation (no mouse support).</li><li>Limited configuration options compared to modern alternatives.</li></ul></li><li>Common features:<ul><li>Function keys or number keys for navigation.</li><li>On-screen prompts for available actions.</li></ul></li></ul></div><div class="section"><h2>UEFI BIOS</h2><ul><li><strong>UEFI</strong> (Unified Extensible Firmware Interface) is the modern standard for BIOS, replacing legacy BIOS in newer systems.</li><li>Developed by Intel but adopted as an industry standard, ensuring consistency across manufacturers.</li><li>Key features:<ul><li>Graphical user interface (GUI) with mouse support.</li><li>Enhanced hardware compatibility for modern components.</li><li>Advanced configuration options for performance, security, and virtualization.</li></ul></li><li>Common UEFI settings include:<ul><li>CPU and BIOS overview.</li><li>Connected devices (storage, audio, network).</li><li>Advanced settings (virtualization, CPU features).</li><li>Power management and security options.</li><li>Boot order and startup configurations.</li></ul></li><li>Some settings are critical for system stability; modifications should be made with caution.</li></ul></div><div class="section"><h2>BIOS Updates and Best Practices</h2><ul><li>BIOS updates can improve hardware compatibility, security, and performance.</li><li>Best practices for updating BIOS:<ul><li>Backup current BIOS settings before updating.</li><li>Follow manufacturer instructions precisely.</li><li>Ensure a stable power source during the update process.</li><li>Use the backup BIOS (if available) in case of failure.</li></ul></li><li>Incorrect updates can render a system inoperable; proceed with caution.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/3.1.html" class="nav-button">← Previous Lesson (3.1)</a><a href="pages/3.3.html" class="nav-button">Next Lesson (3.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BIOS and UEFI - A+ Core 1 (3.2)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>BIOS and UEFI</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.2</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to BIOS</h2>
+            <ul>
+                <li>The <strong>BIOS</strong> (Basic Input Output System) is the first software that runs when you start
+                    your computer, appearing before the operating system loads.</li>
+                <li>Also referred to as <strong>firmware</strong>, <strong>system BIOS</strong>, or <strong>ROM
+                        BIOS</strong> (historically stored in Read-Only Memory).</li>
+                <li>Modern systems store the BIOS in <strong>flash memory</strong> on the motherboard, allowing for
+                    updates.</li>
+                <li>The BIOS initializes hardware and prepares the system to load the operating system.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Power On Self Test (POST)</h2>
+            <ul>
+                <li>The <strong>POST</strong> (Power On Self Test) is the diagnostic process performed by the BIOS
+                    during startup.</li>
+                <li>Checks for essential hardware components, including:<ul>
+                        <li>CPU</li>
+                        <li>Memory (RAM)</li>
+                        <li>Keyboard and mouse</li>
+                        <li>Storage devices</li>
+                    </ul>
+                </li>
+                <li>If any critical hardware fails initialization, an <strong>error message</strong> or beep code is
+                    displayed.</li>
+                <li>The POST process typically completes within a few seconds before proceeding to load the operating
+                    system.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Bootloader and Operating System Selection</h2>
+            <ul>
+                <li>After POST completes, the system either:<ul>
+                        <li>Automatically loads the operating system, or</li>
+                        <li>Displays a <strong>bootloader</strong> prompt to select an operating system (if multiple are
+                            installed).</li>
+                    </ul>
+                </li>
+                <li>The bootloader signifies that POST has finished and the system is ready to load the OS.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>BIOS Storage and Redundancy</h2>
+            <ul>
+                <li>Modern motherboards store the BIOS in <strong>flash memory</strong>, enabling updates and
+                    modifications.</li>
+                <li>Some motherboards include <strong>dual BIOS chips</strong> (main and backup) to prevent failure
+                    during updates.</li>
+                <li>If an update fails, the backup BIOS can restore functionality.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Legacy BIOS</h2>
+            <ul>
+                <li>Used in older systems (over 25 years old) and designed for legacy hardware.</li>
+                <li>Limitations include:<ul>
+                        <li>Lack of support for modern hardware components.</li>
+                        <li>Text-based interface requiring keyboard navigation (no mouse support).</li>
+                        <li>Limited configuration options compared to modern alternatives.</li>
+                    </ul>
+                </li>
+                <li>Common features:<ul>
+                        <li>Function keys or number keys for navigation.</li>
+                        <li>On-screen prompts for available actions.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>UEFI BIOS</h2>
+            <ul>
+                <li><strong>UEFI</strong> (Unified Extensible Firmware Interface) is the modern standard for BIOS,
+                    replacing legacy BIOS in newer systems.</li>
+                <li>Developed by Intel but adopted as an industry standard, ensuring consistency across manufacturers.
+                </li>
+                <li>Key features:<ul>
+                        <li>Graphical user interface (GUI) with mouse support.</li>
+                        <li>Enhanced hardware compatibility for modern components.</li>
+                        <li>Advanced configuration options for performance, security, and virtualization.</li>
+                    </ul>
+                </li>
+                <li>Common UEFI settings include:<ul>
+                        <li>CPU and BIOS overview.</li>
+                        <li>Connected devices (storage, audio, network).</li>
+                        <li>Advanced settings (virtualization, CPU features).</li>
+                        <li>Power management and security options.</li>
+                        <li>Boot order and startup configurations.</li>
+                    </ul>
+                </li>
+                <li>Some settings are critical for system stability; modifications should be made with caution.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>BIOS Updates and Best Practices</h2>
+            <ul>
+                <li>BIOS updates can improve hardware compatibility, security, and performance.</li>
+                <li>Best practices for updating BIOS:<ul>
+                        <li>Backup current BIOS settings before updating.</li>
+                        <li>Follow manufacturer instructions precisely.</li>
+                        <li>Ensure a stable power source during the update process.</li>
+                        <li>Use the backup BIOS (if available) in case of failure.</li>
+                    </ul>
+                </li>
+                <li>Incorrect updates can render a system inoperable; proceed with caution.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="37.html" class="nav-button">← Previous: Motherboard Compatibility - 3.5</a>
+                <a href="39.html" class="nav-button">Next: BIOS Settings - 3.5 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

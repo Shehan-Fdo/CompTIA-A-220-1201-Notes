@@ -1,1 +1,94 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>IP Address Configuration - A+ Core 1 (2.6)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>IP Address Configuration</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.6</p></div><div class="section"><h2>Key IP Address Parameters</h2><ul><li>Every network device requires an <strong>IP address</strong> for communication, which can be assigned <strong>manually</strong> or automatically.</li><li><strong>Subnet mask</strong> determines the local subnet of the device (e.g., <code>255.255.255.0</code>).</li><li><strong>Default gateway</strong> is the IP address of the local router, enabling communication outside the local subnet (e.g., <code>192.168.1.1</code>).</li><li>Network administrators typically provide the <strong>IP address</strong>, <strong>subnet mask</strong>, and <strong>default gateway</strong> for proper configuration.</li><li>Additional parameters may include <strong>DNS servers</strong>, <strong>NTP servers</strong>, and <strong>VoIP servers</strong>.</li></ul></div><div class="section"><h2>Static vs. Dynamic IP Addressing</h2><ul><li><strong>Static IP address</strong>: Manually configured and remains unchanged, ideal for critical devices like servers, routers, and printers.</li><li>Manual configuration requires precise input of <strong>IP address</strong>, <strong>subnet mask</strong>, <strong>default gateway</strong>, and <strong>DNS servers</strong>.</li><li>Disadvantages of manual configuration:<ul><li>Time-consuming and error-prone, especially in large networks.</li><li>Changes (e.g., gateway or DNS updates) require manual updates on all devices.</li></ul></li><li><strong>Dynamic IP addressing</strong> uses <strong>DHCP (Dynamic Host Configuration Protocol)</strong> to automatically assign IP addresses.</li><li><strong>DHCP reservations</strong> allow devices to receive the same IP address consistently by linking a device’s <strong>MAC address</strong> to a specific IP in the DHCP server.</li><li>Benefits of DHCP reservations:<ul><li>Centralized management of IP addresses.</li><li>Automatic updates for changes (e.g., gateway or DNS modifications).</li></ul></li></ul></div><div class="section"><h2>APIPA (Automatic Private IP Addressing)</h2><ul><li>Used when a device configured for DHCP fails to receive an IP address from a DHCP server.</li><li>Assigns a <strong>link-local address</strong> in the range <code>169.254.0.0/16</code> (excluding the first and last 256 addresses).</li><li>Valid APIPA addresses range from <code>169.254.1.0</code> to <code>169.254.254.255</code>.</li><li>Allows local subnet communication but <strong>cannot route outside the subnet</strong> (no internet access).</li><li>Process for APIPA assignment:<ul><li>Device sends an <strong>ARP request</strong> to verify the chosen IP address is unused.</li><li>If no response is received, the device assigns itself the IP address.</li></ul></li><li>Indicates a potential issue with the <strong>DHCP server</strong> or network connectivity.</li></ul></div><div class="section"><h2>Best Practices for IP Configuration</h2><ul><li>Use <strong>DHCP</strong> for most devices to simplify management and reduce errors.</li><li>Reserve <strong>static IP addresses</strong> for critical infrastructure (e.g., routers, switches, printers, servers).</li><li><strong>DHCP reservations</strong> are preferred over manual static IP configuration for scalability.</li><li>If a device receives an APIPA address, troubleshoot the <strong>DHCP server</strong> or network connectivity.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/2.5.html" class="nav-button">← Previous Lesson (2.5)</a><a href="pages/2.7.html" class="nav-button">Next Lesson (2.7) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Address Configuration - A+ Core 1 (2.6)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>IP Address Configuration</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.6</p>
+        </div>
+        <div class="section">
+            <h2>Key IP Address Parameters</h2>
+            <ul>
+                <li>Every network device requires an <strong>IP address</strong> for communication, which can be
+                    assigned <strong>manually</strong> or automatically.</li>
+                <li><strong>Subnet mask</strong> determines the local subnet of the device (e.g.,
+                    <code>255.255.255.0</code>).</li>
+                <li><strong>Default gateway</strong> is the IP address of the local router, enabling communication
+                    outside the local subnet (e.g., <code>192.168.1.1</code>).</li>
+                <li>Network administrators typically provide the <strong>IP address</strong>, <strong>subnet
+                        mask</strong>, and <strong>default gateway</strong> for proper configuration.</li>
+                <li>Additional parameters may include <strong>DNS servers</strong>, <strong>NTP servers</strong>, and
+                    <strong>VoIP servers</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Static vs. Dynamic IP Addressing</h2>
+            <ul>
+                <li><strong>Static IP address</strong>: Manually configured and remains unchanged, ideal for critical
+                    devices like servers, routers, and printers.</li>
+                <li>Manual configuration requires precise input of <strong>IP address</strong>, <strong>subnet
+                        mask</strong>, <strong>default gateway</strong>, and <strong>DNS servers</strong>.</li>
+                <li>Disadvantages of manual configuration:<ul>
+                        <li>Time-consuming and error-prone, especially in large networks.</li>
+                        <li>Changes (e.g., gateway or DNS updates) require manual updates on all devices.</li>
+                    </ul>
+                </li>
+                <li><strong>Dynamic IP addressing</strong> uses <strong>DHCP (Dynamic Host Configuration
+                        Protocol)</strong> to automatically assign IP addresses.</li>
+                <li><strong>DHCP reservations</strong> allow devices to receive the same IP address consistently by
+                    linking a device’s <strong>MAC address</strong> to a specific IP in the DHCP server.</li>
+                <li>Benefits of DHCP reservations:<ul>
+                        <li>Centralized management of IP addresses.</li>
+                        <li>Automatic updates for changes (e.g., gateway or DNS modifications).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>APIPA (Automatic Private IP Addressing)</h2>
+            <ul>
+                <li>Used when a device configured for DHCP fails to receive an IP address from a DHCP server.</li>
+                <li>Assigns a <strong>link-local address</strong> in the range <code>169.254.0.0/16</code> (excluding
+                    the first and last 256 addresses).</li>
+                <li>Valid APIPA addresses range from <code>169.254.1.0</code> to <code>169.254.254.255</code>.</li>
+                <li>Allows local subnet communication but <strong>cannot route outside the subnet</strong> (no internet
+                    access).</li>
+                <li>Process for APIPA assignment:<ul>
+                        <li>Device sends an <strong>ARP request</strong> to verify the chosen IP address is unused.</li>
+                        <li>If no response is received, the device assigns itself the IP address.</li>
+                    </ul>
+                </li>
+                <li>Indicates a potential issue with the <strong>DHCP server</strong> or network connectivity.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Best Practices for IP Configuration</h2>
+            <ul>
+                <li>Use <strong>DHCP</strong> for most devices to simplify management and reduce errors.</li>
+                <li>Reserve <strong>static IP addresses</strong> for critical infrastructure (e.g., routers, switches,
+                    printers, servers).</li>
+                <li><strong>DHCP reservations</strong> are preferred over manual static IP configuration for
+                    scalability.</li>
+                <li>If a device receives an APIPA address, troubleshoot the <strong>DHCP server</strong> or network
+                    connectivity.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="14.html" class="nav-button">← Previous: IPv4 and IPv6 - 2.6</a>
+                <a href="16.html" class="nav-button">Next: Internet Connection Types - 2.7 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

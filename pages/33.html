@@ -1,1 +1,165 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RAID Configurations - A+ Core 1 (3.4)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>RAID Configurations: Redundancy and Performance</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.4</p></div><div class="section"><h2>Introduction to RAID</h2><ul><li>Storage devices like <strong>hard drives</strong> and <strong>SSDs</strong> are physical components that can fail due to moving parts (e.g., spinning platters, actuator arms).</li><li><strong>Redundancy</strong> is achieved by combining multiple drives to protect data if one fails.</li><li><strong>Important Note:</strong> RAID is <strong>not a backup solution</strong>. Always maintain a separate backup process even when using RAID.</li><li>RAID stands for <strong>Redundant Array of Independent Disks</strong> (or <strong>Inexpensive Disks</strong>).</li><li>Different RAID levels offer varying balances of <strong>performance</strong>, <strong>redundancy</strong>, and <strong>storage efficiency</strong>.</li></ul></div><div class="section"><h2>RAID 0 (Striping)</h2><ul><li>Requires <strong>at least two drives</strong>.</li><li>Data is <strong>split (striped)</strong> across all drives (e.g., Block 1A on Drive 1, Block 2A on Drive 2).</li><li><strong>Advantages:</strong><ul><li>Improves <strong>read/write speeds</strong> by distributing data across multiple drives.</li></ul></li><li><strong>Disadvantages:</strong><ul><li><strong>No redundancy</strong>; if one drive fails, <strong>all data is lost</strong>.</li><li>Often called "RAID 0" because it provides <strong>zero redundancy</strong>.</li></ul></li></ul></div><div class="section"><h2>RAID 1 (Mirroring)</h2><ul><li>Requires <strong>at least two drives</strong>.</li><li>Data is <strong>duplicated (mirrored)</strong> across all drives (e.g., Drive 1 and Drive 2 contain identical data).</li><li><strong>Advantages:</strong><ul><li>Provides <strong>full redundancy</strong>; if one drive fails, data remains accessible on the other drive(s).</li></ul></li><li><strong>Disadvantages:</strong><ul><li>Requires <strong>double the storage capacity</strong> (e.g., 2TB of data requires 4TB of storage).</li><li>Slower write speeds compared to RAID 0 due to duplication.</li></ul></li></ul></div><div class="section"><h2>RAID 5 (Striping with Parity)</h2><ul><li>Requires <strong>at least three drives</strong>.</li><li>Data is <strong>striped</strong> across drives, with <strong>parity data</strong> distributed across all drives (e.g., 3 drives store data, 1 drive’s worth of parity).</li><li><strong>Advantages:</strong><ul><li>Provides <strong>redundancy</strong>; if one drive fails, data can be <strong>reconstructed</strong> using parity.</li><li>More <strong>storage-efficient</strong> than RAID 1 (e.g., 3TB of usable space for 4TB of total storage).</li></ul></li><li><strong>Disadvantages:</strong><ul><li><strong>Performance overhead</strong> during recovery due to parity calculations.</li><li>Can only tolerate <strong>one drive failure</strong>.</li></ul></li></ul></div><div class="section"><h2>RAID 6 (Striping with Dual Parity)</h2><ul><li>Requires <strong>at least four drives</strong>.</li><li>Similar to RAID 5 but includes <strong>two parity blocks</strong> distributed across drives.</li><li><strong>Advantages:</strong><ul><li>Can tolerate <strong>two drive failures</strong> while maintaining data availability.</li><li>Higher redundancy than RAID 5.</li></ul></li><li><strong>Disadvantages:</strong><ul><li>Requires an additional drive for parity, reducing usable storage (e.g., 4 drives = 2TB usable for 6TB total).</li><li>Higher <strong>CPU overhead</strong> for parity calculations.</li></ul></li></ul></div><div class="section"><h2>RAID 10 (RAID 1 + 0 or "Stripe of Mirrors")</h2><ul><li>Requires <strong>at least four drives</strong>.</li><li>Combines <strong>RAID 1 (mirroring)</strong> and <strong>RAID 0 (striping)</strong>.</li><li><strong>Structure:</strong><ul><li>Drives are mirrored in pairs (RAID 1).</li><li>Mirrored pairs are then striped (RAID 0).</li></ul></li><li><strong>Advantages:</strong><ul><li>High <strong>performance</strong> (striping) and <strong>redundancy</strong> (mirroring).</li><li>Can tolerate <strong>multiple drive failures</strong> (as long as no mirrored pair loses both drives).</li></ul></li><li><strong>Disadvantages:</strong><ul><li>Requires <strong>double the storage capacity</strong> (e.g., 4TB of data requires 8TB of storage).</li></ul></li></ul></div><div class="section"><h2>Summary of RAID Levels</h2><ul><li><strong>RAID 0:</strong> Striping, <strong>no redundancy</strong>, high performance.</li><li><strong>RAID 1:</strong> Mirroring, <strong>full redundancy</strong>, high storage cost.</li><li><strong>RAID 5:</strong> Striping with parity, <strong>single-drive redundancy</strong>, storage-efficient.</li><li><strong>RAID 6:</strong> Striping with dual parity, <strong>two-drive redundancy</strong>, higher overhead.</li><li><strong>RAID 10:</strong> Stripe of mirrors, <strong>high performance and redundancy</strong>, high storage cost.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/3.3.html" class="nav-button">← Previous Lesson (3.3)</a><a href="pages/3.5.html" class="nav-button">Next Lesson (3.5) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAID Configurations - A+ Core 1 (3.4)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>RAID Configurations: Redundancy and Performance</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.4</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to RAID</h2>
+            <ul>
+                <li>Storage devices like <strong>hard drives</strong> and <strong>SSDs</strong> are physical components
+                    that can fail due to moving parts (e.g., spinning platters, actuator arms).</li>
+                <li><strong>Redundancy</strong> is achieved by combining multiple drives to protect data if one fails.
+                </li>
+                <li><strong>Important Note:</strong> RAID is <strong>not a backup solution</strong>. Always maintain a
+                    separate backup process even when using RAID.</li>
+                <li>RAID stands for <strong>Redundant Array of Independent Disks</strong> (or <strong>Inexpensive
+                        Disks</strong>).</li>
+                <li>Different RAID levels offer varying balances of <strong>performance</strong>,
+                    <strong>redundancy</strong>, and <strong>storage efficiency</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>RAID 0 (Striping)</h2>
+            <ul>
+                <li>Requires <strong>at least two drives</strong>.</li>
+                <li>Data is <strong>split (striped)</strong> across all drives (e.g., Block 1A on Drive 1, Block 2A on
+                    Drive 2).</li>
+                <li><strong>Advantages:</strong>
+                    <ul>
+                        <li>Improves <strong>read/write speeds</strong> by distributing data across multiple drives.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Disadvantages:</strong>
+                    <ul>
+                        <li><strong>No redundancy</strong>; if one drive fails, <strong>all data is lost</strong>.</li>
+                        <li>Often called "RAID 0" because it provides <strong>zero redundancy</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>RAID 1 (Mirroring)</h2>
+            <ul>
+                <li>Requires <strong>at least two drives</strong>.</li>
+                <li>Data is <strong>duplicated (mirrored)</strong> across all drives (e.g., Drive 1 and Drive 2 contain
+                    identical data).</li>
+                <li><strong>Advantages:</strong>
+                    <ul>
+                        <li>Provides <strong>full redundancy</strong>; if one drive fails, data remains accessible on
+                            the other drive(s).</li>
+                    </ul>
+                </li>
+                <li><strong>Disadvantages:</strong>
+                    <ul>
+                        <li>Requires <strong>double the storage capacity</strong> (e.g., 2TB of data requires 4TB of
+                            storage).</li>
+                        <li>Slower write speeds compared to RAID 0 due to duplication.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>RAID 5 (Striping with Parity)</h2>
+            <ul>
+                <li>Requires <strong>at least three drives</strong>.</li>
+                <li>Data is <strong>striped</strong> across drives, with <strong>parity data</strong> distributed across
+                    all drives (e.g., 3 drives store data, 1 drive’s worth of parity).</li>
+                <li><strong>Advantages:</strong>
+                    <ul>
+                        <li>Provides <strong>redundancy</strong>; if one drive fails, data can be
+                            <strong>reconstructed</strong> using parity.</li>
+                        <li>More <strong>storage-efficient</strong> than RAID 1 (e.g., 3TB of usable space for 4TB of
+                            total storage).</li>
+                    </ul>
+                </li>
+                <li><strong>Disadvantages:</strong>
+                    <ul>
+                        <li><strong>Performance overhead</strong> during recovery due to parity calculations.</li>
+                        <li>Can only tolerate <strong>one drive failure</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>RAID 6 (Striping with Dual Parity)</h2>
+            <ul>
+                <li>Requires <strong>at least four drives</strong>.</li>
+                <li>Similar to RAID 5 but includes <strong>two parity blocks</strong> distributed across drives.</li>
+                <li><strong>Advantages:</strong>
+                    <ul>
+                        <li>Can tolerate <strong>two drive failures</strong> while maintaining data availability.</li>
+                        <li>Higher redundancy than RAID 5.</li>
+                    </ul>
+                </li>
+                <li><strong>Disadvantages:</strong>
+                    <ul>
+                        <li>Requires an additional drive for parity, reducing usable storage (e.g., 4 drives = 2TB
+                            usable for 6TB total).</li>
+                        <li>Higher <strong>CPU overhead</strong> for parity calculations.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>RAID 10 (RAID 1 + 0 or "Stripe of Mirrors")</h2>
+            <ul>
+                <li>Requires <strong>at least four drives</strong>.</li>
+                <li>Combines <strong>RAID 1 (mirroring)</strong> and <strong>RAID 0 (striping)</strong>.</li>
+                <li><strong>Structure:</strong>
+                    <ul>
+                        <li>Drives are mirrored in pairs (RAID 1).</li>
+                        <li>Mirrored pairs are then striped (RAID 0).</li>
+                    </ul>
+                </li>
+                <li><strong>Advantages:</strong>
+                    <ul>
+                        <li>High <strong>performance</strong> (striping) and <strong>redundancy</strong> (mirroring).
+                        </li>
+                        <li>Can tolerate <strong>multiple drive failures</strong> (as long as no mirrored pair loses
+                            both drives).</li>
+                    </ul>
+                </li>
+                <li><strong>Disadvantages:</strong>
+                    <ul>
+                        <li>Requires <strong>double the storage capacity</strong> (e.g., 4TB of data requires 8TB of
+                            storage).</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Summary of RAID Levels</h2>
+            <ul>
+                <li><strong>RAID 0:</strong> Striping, <strong>no redundancy</strong>, high performance.</li>
+                <li><strong>RAID 1:</strong> Mirroring, <strong>full redundancy</strong>, high storage cost.</li>
+                <li><strong>RAID 5:</strong> Striping with parity, <strong>single-drive redundancy</strong>,
+                    storage-efficient.</li>
+                <li><strong>RAID 6:</strong> Striping with dual parity, <strong>two-drive redundancy</strong>, higher
+                    overhead.</li>
+                <li><strong>RAID 10:</strong> Stripe of mirrors, <strong>high performance and redundancy</strong>, high
+                    storage cost.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="32.html" class="nav-button">← Previous: Storage Devices - 3.4</a>
+                <a href="34.html" class="nav-button">Next: Motherboards - 3.5 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

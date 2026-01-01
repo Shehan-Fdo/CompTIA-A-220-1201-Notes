@@ -1,1 +1,183 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Network Devices - A+ Core 1 (2.1)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Network Devices</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p></div><div class="section"><h2>Introduction to Network Devices</h2><ul><li>Data centers and computer rooms contain racks of devices like <strong>servers</strong>, <strong>routers</strong>, <strong>switches</strong>, and other components, each performing specific network functions.</li><li>Many devices combine multiple functions into a single unit (e.g., a <strong>wireless router</strong> at home includes a <strong>router</strong>, <strong>switch</strong>, <strong>access point</strong>, and <strong>security software</strong>).</li><li>Understanding individual devices helps in designing and troubleshooting networks effectively.</li></ul></div><div class="section"><h2>Routers</h2><ul><li>Routers connect different <strong>IP subnets</strong> and make forwarding decisions based on the <strong>destination IP address</strong> in a packet.</li><li>They use a <strong>routing table</strong> to determine the best path for traffic and send it out the appropriate interface.</li><li>Operate at <strong>OSI Layer 3</strong> (Network Layer).</li><li>Some routers also function as <strong>Layer 3 switches</strong>, combining routing and switching capabilities.</li><li>Can connect different network types (e.g., <strong>Ethernet to wireless</strong>, <strong>fiber to copper</strong>, or <strong>serial networks</strong>).</li></ul></div><div class="section"><h2>Switches</h2><ul><li>Switches connect end devices and forward traffic based on the <strong>destination MAC address</strong>.</li><li>Operate at <strong>OSI Layer 2</strong> (Data Link Layer) but can include Layer 3 functionality (<strong>Layer 3 switches</strong>).</li><li>Use <strong>Application-Specific Integrated Circuits (ASICs)</strong> for high-speed switching in hardware.</li><li>Common port configurations: <strong>24-port</strong> or <strong>48-port</strong> for workgroup switches; <strong>hundreds of ports</strong> for core switches.</li><li>Support <strong>Power over Ethernet (PoE)</strong>, providing both data and power over the same cable for devices like <strong>phones</strong>, <strong>wireless access points</strong>, and <strong>laptops</strong>.</li></ul></div><div class="section"><h2>Managed vs. Unmanaged Switches</h2><ul><li><strong>Unmanaged Switches</strong>:<ul><li>Plug-and-play with no configuration options.</li><li>No <strong>VLAN</strong> support; all ports belong to a single broadcast domain.</li><li>No remote management (e.g., no <strong>SNMP</strong> or logging).</li><li>Lower cost, ideal for simple connectivity needs.</li></ul></li><li><strong>Managed Switches</strong>:<ul><li>Support advanced configurations like <strong>VLANs</strong>, <strong>traffic prioritization</strong>, and <strong>redundancy</strong>.</li><li>Allow remote management via <strong>SNMP</strong>, <strong>CLI</strong>, or web interfaces.</li><li>Support <strong>port mirroring</strong> for monitoring traffic with tools like protocol analyzers.</li><li>Used in enterprise networks for scalability and security.</li></ul></li></ul></div><div class="section"><h2>Access Points</h2><ul><li>Wireless <strong>access points (APs)</strong> bridge wired and wireless networks without routing or IP translation.</li><li>Forward traffic based on <strong>MAC addresses</strong>, similar to switches.</li><li>Common in corporate environments to provide wireless connectivity to end devices.</li></ul></div><div class="section"><h2>Patch Panels</h2><ul><li>Simplify cable management by terminating Ethernet cables from desks to a central closet.</li><li>One side connects to desks via <strong>punch-down blocks</strong> (permanent connections).</li><li>The other side uses <strong>RJ45 connectors</strong> for flexible reconfiguration without rewiring.</li><li>Allows easy switching between <strong>VLANs</strong>, <strong>switches</strong>, or troubleshooting connections.</li></ul></div><div class="section"><h2>Firewalls</h2><ul><li><strong>Traditional Firewalls</strong>: Filter traffic based on <strong>port numbers</strong> (e.g., allow <strong>TCP 80</strong> for HTTP, block <strong>TCP 22</strong> for SSH).</li><li><strong>Next-Generation Firewalls (NGFW)</strong>: Filter traffic based on <strong>applications</strong> (e.g., allow web browsing but block remote access tools).</li><li>Can act as <strong>VPN concentrators</strong> for site-to-site or remote access VPNs.</li><li>May include <strong>proxy functionality</strong> to inspect and forward client-server traffic.</li><li>Often installed as routers to provide both security and routing between subnets.</li></ul></div><div class="section"><h2>Power over Ethernet (PoE)</h2><ul><li>Delivers both <strong>data</strong> and <strong>power</strong> over Ethernet cables to devices like <strong>phones</strong>, <strong>access points</strong>, and <strong>cameras</strong>.</li><li><strong>PoE Standards</strong>:<ul><li><strong>PoE (802.3af)</strong>: 15.4W, 350mA (for phones, small devices).</li><li><strong>PoE+ (802.3at)</strong>: 25.5W, 600mA (for PTZ cameras, larger devices).</li><li><strong>PoE++ (802.3bt)</strong>: 51W (Type 3) or 71.3W (Type 4), 600mA/960mA (for laptops, high-power devices).</li></ul></li><li><strong>In-Span PoE</strong>: Power comes directly from the switch.</li><li><strong>Mid-Span PoE</strong>: Uses an external <strong>PoE injector</strong> if the switch lacks PoE support.</li><li>Check switch documentation or labels for PoE compatibility.</li></ul></div><div class="section"><h2>Modems and Internet Connectivity</h2><ul><li><strong>Cable Modems</strong>:<ul><li>Use <strong>coaxial cables</strong> (same as cable TV) to provide broadband internet.</li><li>Follow <strong>DOCSIS</strong> (Data Over Cable Service Interface Specification) standards.</li><li>Support speeds up to <strong>1 Gbps</strong> or higher.</li><li>Common in homes and businesses for high-speed internet.</li></ul></li><li><strong>DSL Modems</strong>:<ul><li>Use <strong>telephone lines</strong> to provide digital internet (voice and data simultaneously).</li><li>Throughput depends on distance from the <strong>central office</strong> (max ~10,000 feet).</li><li>Typical speeds: <strong>200 Mbps downstream</strong>, <strong>20 Mbps upstream</strong>.</li></ul></li><li><strong>ONT (Optical Network Terminal)</strong>:<ul><li>Converts <strong>fiber optic</strong> signals to <strong>copper</strong> (Ethernet/RJ45) for local networks.</li><li>Serves as the <strong>demarcation point</strong> (boundary between ISP and user responsibility).</li><li>May include <strong>RJ11</strong> for VoIP, <strong>F-connector</strong> for video, and <strong>RJ45</strong> for data.</li></ul></li></ul></div><div class="section"><h2>Network Interface Cards (NICs)</h2><ul><li>Provide connectivity between devices and the network.</li><li>Can be built into motherboards or added via <strong>expansion cards</strong>.</li><li>Types include <strong>100 Mbps</strong>, <strong>1 Gbps</strong>, or <strong>10 Gbps</strong> Ethernet, and <strong>fiber optic</strong> NICs.</li><li>Each interface has a unique <strong>MAC address</strong> for identification.</li><li>Expansion cards allow adding multiple Ethernet ports to a device.</li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Devices - A+ Core 1 (2.1)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Network Devices</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to Network Devices</h2>
+            <ul>
+                <li>Data centers and computer rooms contain racks of devices like <strong>servers</strong>,
+                    <strong>routers</strong>, <strong>switches</strong>, and other components, each performing specific
+                    network functions.</li>
+                <li>Many devices combine multiple functions into a single unit (e.g., a <strong>wireless router</strong>
+                    at home includes a <strong>router</strong>, <strong>switch</strong>, <strong>access point</strong>,
+                    and <strong>security software</strong>).</li>
+                <li>Understanding individual devices helps in designing and troubleshooting networks effectively.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Routers</h2>
+            <ul>
+                <li>Routers connect different <strong>IP subnets</strong> and make forwarding decisions based on the
+                    <strong>destination IP address</strong> in a packet.</li>
+                <li>They use a <strong>routing table</strong> to determine the best path for traffic and send it out the
+                    appropriate interface.</li>
+                <li>Operate at <strong>OSI Layer 3</strong> (Network Layer).</li>
+                <li>Some routers also function as <strong>Layer 3 switches</strong>, combining routing and switching
+                    capabilities.</li>
+                <li>Can connect different network types (e.g., <strong>Ethernet to wireless</strong>, <strong>fiber to
+                        copper</strong>, or <strong>serial networks</strong>).</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Switches</h2>
+            <ul>
+                <li>Switches connect end devices and forward traffic based on the <strong>destination MAC
+                        address</strong>.</li>
+                <li>Operate at <strong>OSI Layer 2</strong> (Data Link Layer) but can include Layer 3 functionality
+                    (<strong>Layer 3 switches</strong>).</li>
+                <li>Use <strong>Application-Specific Integrated Circuits (ASICs)</strong> for high-speed switching in
+                    hardware.</li>
+                <li>Common port configurations: <strong>24-port</strong> or <strong>48-port</strong> for workgroup
+                    switches; <strong>hundreds of ports</strong> for core switches.</li>
+                <li>Support <strong>Power over Ethernet (PoE)</strong>, providing both data and power over the same
+                    cable for devices like <strong>phones</strong>, <strong>wireless access points</strong>, and
+                    <strong>laptops</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Managed vs. Unmanaged Switches</h2>
+            <ul>
+                <li><strong>Unmanaged Switches</strong>:<ul>
+                        <li>Plug-and-play with no configuration options.</li>
+                        <li>No <strong>VLAN</strong> support; all ports belong to a single broadcast domain.</li>
+                        <li>No remote management (e.g., no <strong>SNMP</strong> or logging).</li>
+                        <li>Lower cost, ideal for simple connectivity needs.</li>
+                    </ul>
+                </li>
+                <li><strong>Managed Switches</strong>:<ul>
+                        <li>Support advanced configurations like <strong>VLANs</strong>, <strong>traffic
+                                prioritization</strong>, and <strong>redundancy</strong>.</li>
+                        <li>Allow remote management via <strong>SNMP</strong>, <strong>CLI</strong>, or web interfaces.
+                        </li>
+                        <li>Support <strong>port mirroring</strong> for monitoring traffic with tools like protocol
+                            analyzers.</li>
+                        <li>Used in enterprise networks for scalability and security.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Access Points</h2>
+            <ul>
+                <li>Wireless <strong>access points (APs)</strong> bridge wired and wireless networks without routing or
+                    IP translation.</li>
+                <li>Forward traffic based on <strong>MAC addresses</strong>, similar to switches.</li>
+                <li>Common in corporate environments to provide wireless connectivity to end devices.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Patch Panels</h2>
+            <ul>
+                <li>Simplify cable management by terminating Ethernet cables from desks to a central closet.</li>
+                <li>One side connects to desks via <strong>punch-down blocks</strong> (permanent connections).</li>
+                <li>The other side uses <strong>RJ45 connectors</strong> for flexible reconfiguration without rewiring.
+                </li>
+                <li>Allows easy switching between <strong>VLANs</strong>, <strong>switches</strong>, or troubleshooting
+                    connections.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Firewalls</h2>
+            <ul>
+                <li><strong>Traditional Firewalls</strong>: Filter traffic based on <strong>port numbers</strong> (e.g.,
+                    allow <strong>TCP 80</strong> for HTTP, block <strong>TCP 22</strong> for SSH).</li>
+                <li><strong>Next-Generation Firewalls (NGFW)</strong>: Filter traffic based on
+                    <strong>applications</strong> (e.g., allow web browsing but block remote access tools).</li>
+                <li>Can act as <strong>VPN concentrators</strong> for site-to-site or remote access VPNs.</li>
+                <li>May include <strong>proxy functionality</strong> to inspect and forward client-server traffic.</li>
+                <li>Often installed as routers to provide both security and routing between subnets.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Power over Ethernet (PoE)</h2>
+            <ul>
+                <li>Delivers both <strong>data</strong> and <strong>power</strong> over Ethernet cables to devices like
+                    <strong>phones</strong>, <strong>access points</strong>, and <strong>cameras</strong>.</li>
+                <li><strong>PoE Standards</strong>:<ul>
+                        <li><strong>PoE (802.3af)</strong>: 15.4W, 350mA (for phones, small devices).</li>
+                        <li><strong>PoE+ (802.3at)</strong>: 25.5W, 600mA (for PTZ cameras, larger devices).</li>
+                        <li><strong>PoE++ (802.3bt)</strong>: 51W (Type 3) or 71.3W (Type 4), 600mA/960mA (for laptops,
+                            high-power devices).</li>
+                    </ul>
+                </li>
+                <li><strong>In-Span PoE</strong>: Power comes directly from the switch.</li>
+                <li><strong>Mid-Span PoE</strong>: Uses an external <strong>PoE injector</strong> if the switch lacks
+                    PoE support.</li>
+                <li>Check switch documentation or labels for PoE compatibility.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Modems and Internet Connectivity</h2>
+            <ul>
+                <li><strong>Cable Modems</strong>:<ul>
+                        <li>Use <strong>coaxial cables</strong> (same as cable TV) to provide broadband internet.</li>
+                        <li>Follow <strong>DOCSIS</strong> (Data Over Cable Service Interface Specification) standards.
+                        </li>
+                        <li>Support speeds up to <strong>1 Gbps</strong> or higher.</li>
+                        <li>Common in homes and businesses for high-speed internet.</li>
+                    </ul>
+                </li>
+                <li><strong>DSL Modems</strong>:<ul>
+                        <li>Use <strong>telephone lines</strong> to provide digital internet (voice and data
+                            simultaneously).</li>
+                        <li>Throughput depends on distance from the <strong>central office</strong> (max ~10,000 feet).
+                        </li>
+                        <li>Typical speeds: <strong>200 Mbps downstream</strong>, <strong>20 Mbps upstream</strong>.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>ONT (Optical Network Terminal)</strong>:<ul>
+                        <li>Converts <strong>fiber optic</strong> signals to <strong>copper</strong> (Ethernet/RJ45) for
+                            local networks.</li>
+                        <li>Serves as the <strong>demarcation point</strong> (boundary between ISP and user
+                            responsibility).</li>
+                        <li>May include <strong>RJ11</strong> for VoIP, <strong>F-connector</strong> for video, and
+                            <strong>RJ45</strong> for data.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Network Interface Cards (NICs)</h2>
+            <ul>
+                <li>Provide connectivity between devices and the network.</li>
+                <li>Can be built into motherboards or added via <strong>expansion cards</strong>.</li>
+                <li>Types include <strong>100 Mbps</strong>, <strong>1 Gbps</strong>, or <strong>10 Gbps</strong>
+                    Ethernet, and <strong>fiber optic</strong> NICs.</li>
+                <li>Each interface has a unique <strong>MAC address</strong> for identification.</li>
+                <li>Expansion cards allow adding multiple Ethernet ports to a device.</li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="12.html" class="nav-button">← Previous: VLANs and VPNs - 2.4</a>
+                <a href="14.html" class="nav-button">Next: IPv4 and IPv6 - 2.6 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

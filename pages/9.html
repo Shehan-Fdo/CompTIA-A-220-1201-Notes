@@ -1,1 +1,300 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Common Data Center Services - A+ Core 1 (2.1)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Common Data Center Services</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p></div><div class="section"><h2>Introduction to Data Center Services</h2><ul><li>Data centers house numerous racks of equipment, each running multiple services.</li><li>Services in a data center support critical functions like networking, storage, security, and application delivery.</li><li>Understanding these services is essential for managing, troubleshooting, and securing modern IT infrastructure.</li></ul></div><div class="section"><h2>Domain Name System (DNS)</h2><ul><li>Converts <strong>fully qualified domain names (FQDNs)</strong> (e.g., <code>example.com</code>) to <strong>IP addresses</strong> and vice versa.</li><li><strong>Distributed platform</strong>: Thousands of DNS servers operate globally, distributing load based on domain names.</li><li>Managed by <strong>service providers</strong> or <strong>internal IT teams</strong> for redundancy and reliability.</li><li>Supports <strong>forward lookups</strong> (name to IP) and <strong>reverse lookups</strong> (IP to name).</li><li>Uses caching to improve performance and reduce latency.</li></ul></div><div class="section"><h2>Dynamic Host Configuration Protocol (DHCP)</h2><ul><li>Automatically assigns <strong>IP addresses</strong>, <strong>subnet masks</strong>, <strong>default gateways</strong>, and other network configurations to devices.</li><li>Eliminates manual configuration, reducing errors and administrative overhead.</li><li>Commonly deployed in <strong>home networks</strong> and <strong>enterprise environments</strong>.</li><li>Enterprises use <strong>multiple DHCP servers</strong> for redundancy to ensure continuous service availability.</li></ul></div><div class="section"><h2>File Sharing Services</h2><ul><li>Enables <strong>centralized storage</strong> and <strong>collaboration</strong> for documents, spreadsheets, and other files.</li><li>Operating systems use different protocols:<ul><li><strong>Windows</strong>: <strong>Server Message Block (SMB)</strong>.</li><li><strong>macOS</strong>: <strong>Apple Filing Protocol (AFP)</strong>.</li></ul></li><li>Users interact with a <strong>file management interface</strong> (e.g., drag-and-drop, rename, modify) without needing to know the underlying protocol.</li></ul></div><div class="section"><h2>Print Services</h2><ul><li>Manages <strong>print jobs</strong>, queues, and device communication for networked printers.</li><li>Can be hosted on:<ul><li>A <strong>dedicated print server</strong>.</li><li>A <strong>network card</strong> built into the printer.</li></ul></li><li>Supports multiple protocols:<ul><li><strong>Server Message Block (SMB)</strong>.</li><li><strong>Internet Printing Protocol (IPP)</strong>.</li><li><strong>Line Printer Daemon (LPD)</strong>.</li></ul></li></ul></div><div class="section"><h2>Email Services</h2><ul><li>Facilitates sending and receiving <strong>email messages</strong> via servers.</li><li>Deployed in:<ul><li><strong>Cloud environments</strong> (e.g., managed by ISPs or cloud providers).</li><li><strong>On-premises data centers</strong> (self-managed by organizations).</li></ul></li><li>Requires <strong>high uptime</strong> due to critical business communication needs.</li><li>System administrators must design for <strong>redundancy</strong>, <strong>scalability</strong>, and <strong>security</strong>.</li></ul></div><div class="section"><h2>Logging and Monitoring (Syslog/SIEM)</h2><ul><li><strong>Syslog</strong>: Protocol for collecting and consolidating <strong>log files</strong> from network devices (e.g., switches, routers, firewalls, servers).</li><li><strong>Security Information and Event Manager (SIEM)</strong>: Centralized system for:<ul><li>Storing and analyzing logs.</li><li>Correlating events across diverse systems.</li><li>Detecting security threats and anomalies.</li></ul></li><li>Requires <strong>large storage capacity</strong> to retain logs for compliance and forensic analysis.</li></ul></div><div class="section"><h2>Web Servers</h2><ul><li>Responds to <strong>browser requests</strong> using <strong>HTTP</strong> or <strong>HTTPS</strong> protocols.</li><li>Hosts <strong>web files</strong> (e.g., HTML, CSS, JavaScript) and delivers them to clients.</li><li>Browsers interpret <strong>HTML</strong> to render graphical web pages.</li></ul></div><div class="section"><h2>Authentication Servers (AAA)</h2><ul><li><strong>Authentication, Authorization, and Accounting (AAA)</strong>: Centralized system for managing user access.</li><li>Primary functions:<ul><li><strong>Authentication</strong>: Verifies user credentials (e.g., username/password).</li><li><strong>Authorization</strong>: Grants access to specific resources based on permissions.</li><li><strong>Accounting</strong>: Tracks user activity for auditing and compliance.</li></ul></li><li>Common in <strong>enterprise environments</strong>; rarely used in home networks.</li><li>Deployed with <strong>redundancy</strong> to ensure continuous availability.</li></ul></div><div class="section"><h2>Database Servers</h2><ul><li>Stores and manages data in <strong>relational database tables</strong> (e.g., structured like spreadsheets).</li><li>Supports <strong>relationships between tables</strong> for complex data queries.</li><li>Uses <strong>Structured Query Language (SQL)</strong> for data storage and retrieval.</li><li>Examples of database servers:<ul><li><strong>Microsoft SQL Server</strong>.</li><li><strong>MySQL</strong>.</li><li><strong>PostgreSQL</strong>.</li></ul></li></ul></div><div class="section"><h2>Network Time Protocol (NTP)</h2><ul><li>Ensures <strong>accurate time synchronization</strong> across all networked devices.</li><li>Critical for:<ul><li>Correlating logs across systems.</li><li>Supporting <strong>encryption protocols</strong> (e.g., TLS, Kerberos).</li><li>Maintaining compliance and audit trails.</li></ul></li><li>Uses a <strong>hierarchical system</strong> of NTP servers referencing a <strong>central clock source</strong>.</li><li>Client devices periodically sync with NTP servers to maintain accuracy.</li></ul></div><div class="section"><h2>Spam Gateways</h2><ul><li>Filters <strong>unsolicited emails (spam)</strong> to protect users' inboxes.</li><li>Deployed as:<ul><li>A <strong>cloud-based service</strong>.</li><li>A <strong>dedicated server</strong> in the data center.</li></ul></li><li>Evaluates incoming emails and categorizes them as <strong>legitimate</strong> or <strong>spam</strong>.</li><li>May occasionally misclassify emails, requiring users to check <strong>spam folders</strong>.</li></ul></div><div class="section"><h2>Unified Threat Management (UTM) / Next-Generation Firewalls</h2><ul><li>All-in-one <strong>security appliance</strong> combining multiple functions:<ul><li><strong>URL filtering</strong> and <strong>content inspection</strong>.</li><li><strong>Malware detection</strong> in emails and network traffic.</li><li><strong>Spam filtering</strong>.</li><li><strong>Firewall</strong> and <strong>Intrusion Prevention System (IPS)</strong>.</li><li><strong>Bandwidth shaping</strong> to prioritize critical applications.</li><li><strong>VPN connectivity</strong> for secure remote access.</li></ul></li><li>Often positioned at the <strong>network perimeter</strong> (between the organization and the internet).</li></ul></div><div class="section"><h2>Load Balancers</h2><ul><li>Distributes <strong>incoming traffic</strong> across multiple servers (e.g., web servers) to:<ul><li>Improve <strong>performance</strong> and <strong>scalability</strong>.</li><li>Ensure <strong>high availability</strong> and <strong>fault tolerance</strong>.</li></ul></li><li>Automatically detects and removes <strong>failed servers</strong> from the rotation.</li><li>End users experience <strong>no downtime</strong> during server outages.</li></ul></div><div class="section"><h2>Proxy Servers</h2><ul><li>Acts as an intermediary between <strong>clients</strong> and <strong>servers</strong> for security and control.</li><li>Functions include:<ul><li><strong>Security</strong>: Inspects and filters traffic for malicious content.</li><li><strong>Access control</strong>: Restricts or allows access to specific resources.</li><li><strong>Caching</strong>: Stores frequently accessed content to improve performance.</li><li><strong>Content scanning</strong>: Blocks or allows specific types of content.</li></ul></li><li>Often <strong>transparent</strong> to end users (no manual configuration required).</li></ul></div><div class="section"><h2>Supervisory Control and Data Acquisition (SCADA) / Industrial Control Systems (ICS)</h2><ul><li>Specialized systems for managing <strong>industrial equipment</strong> (e.g., power plants, manufacturing, oil/gas).</li><li>Enables <strong>remote monitoring, control, and maintenance</strong> of critical infrastructure.</li><li>Requires <strong>high security</strong> due to the sensitive nature of controlled systems.</li><li>Typically deployed on a <strong>segmented network</strong> with strict access controls.</li></ul></div><div class="section"><h2>Legacy Systems</h2><ul><li>Older systems that remain in use due to <strong>critical functionality</strong> or <strong>cost of replacement</strong>.</li><li>Examples include hardware or software installed <strong>10+ years ago</strong>.</li><li>Managing legacy systems requires:<ul><li><strong>Specialized knowledge</strong> of outdated technologies.</li><li><strong>Compatibility considerations</strong> with modern systems.</li><li><strong>Security hardening</strong> to mitigate vulnerabilities.</li></ul></li></ul></div><div class="section"><h2>Embedded Systems</h2><ul><li>Purpose-built devices with <strong>limited or no direct OS access</strong> (e.g., fire alarms, time clocks).</li><li>Managed and maintained by the <strong>manufacturer</strong>; minimal user intervention required.</li><li>Examples:<ul><li><strong>Fire alarm systems</strong>.</li><li><strong>Time clock systems</strong>.</li><li><strong>Industrial controllers</strong>.</li></ul></li></ul></div><div class="section"><h2>Internet of Things (IoT) Devices</h2><ul><li>Broad category of <strong>network-connected devices</strong> for automation and convenience.</li><li>Examples:<ul><li><strong>Smart appliances</strong> (e.g., refrigerators, coffee makers).</li><li><strong>Smart home devices</strong> (e.g., thermostats, doorbells, garage door openers).</li><li><strong>Industrial sensors</strong> and control systems.</li></ul></li><li>Challenges:<ul><li>Manufacturers may lack <strong>network security expertise</strong>.</li><li>Devices often have <strong>weak default configurations</strong> or <strong>unpatched vulnerabilities</strong>.</li></ul></li><li>Best practices:<ul><li>Segment IoT devices on a <strong>dedicated network</strong>.</li><li>Restrict access to sensitive systems.</li><li>Regularly update firmware.</li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common Data Center Services - A+ Core 1 (2.1)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Common Data Center Services</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 2.1</p>
+        </div>
+        <div class="section">
+            <h2>Introduction to Data Center Services</h2>
+            <ul>
+                <li>Data centers house numerous racks of equipment, each running multiple services.</li>
+                <li>Services in a data center support critical functions like networking, storage, security, and
+                    application delivery.</li>
+                <li>Understanding these services is essential for managing, troubleshooting, and securing modern IT
+                    infrastructure.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Domain Name System (DNS)</h2>
+            <ul>
+                <li>Converts <strong>fully qualified domain names (FQDNs)</strong> (e.g., <code>example.com</code>) to
+                    <strong>IP addresses</strong> and vice versa.</li>
+                <li><strong>Distributed platform</strong>: Thousands of DNS servers operate globally, distributing load
+                    based on domain names.</li>
+                <li>Managed by <strong>service providers</strong> or <strong>internal IT teams</strong> for redundancy
+                    and reliability.</li>
+                <li>Supports <strong>forward lookups</strong> (name to IP) and <strong>reverse lookups</strong> (IP to
+                    name).</li>
+                <li>Uses caching to improve performance and reduce latency.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Dynamic Host Configuration Protocol (DHCP)</h2>
+            <ul>
+                <li>Automatically assigns <strong>IP addresses</strong>, <strong>subnet masks</strong>, <strong>default
+                        gateways</strong>, and other network configurations to devices.</li>
+                <li>Eliminates manual configuration, reducing errors and administrative overhead.</li>
+                <li>Commonly deployed in <strong>home networks</strong> and <strong>enterprise environments</strong>.
+                </li>
+                <li>Enterprises use <strong>multiple DHCP servers</strong> for redundancy to ensure continuous service
+                    availability.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>File Sharing Services</h2>
+            <ul>
+                <li>Enables <strong>centralized storage</strong> and <strong>collaboration</strong> for documents,
+                    spreadsheets, and other files.</li>
+                <li>Operating systems use different protocols:<ul>
+                        <li><strong>Windows</strong>: <strong>Server Message Block (SMB)</strong>.</li>
+                        <li><strong>macOS</strong>: <strong>Apple Filing Protocol (AFP)</strong>.</li>
+                    </ul>
+                </li>
+                <li>Users interact with a <strong>file management interface</strong> (e.g., drag-and-drop, rename,
+                    modify) without needing to know the underlying protocol.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Print Services</h2>
+            <ul>
+                <li>Manages <strong>print jobs</strong>, queues, and device communication for networked printers.</li>
+                <li>Can be hosted on:<ul>
+                        <li>A <strong>dedicated print server</strong>.</li>
+                        <li>A <strong>network card</strong> built into the printer.</li>
+                    </ul>
+                </li>
+                <li>Supports multiple protocols:<ul>
+                        <li><strong>Server Message Block (SMB)</strong>.</li>
+                        <li><strong>Internet Printing Protocol (IPP)</strong>.</li>
+                        <li><strong>Line Printer Daemon (LPD)</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Email Services</h2>
+            <ul>
+                <li>Facilitates sending and receiving <strong>email messages</strong> via servers.</li>
+                <li>Deployed in:<ul>
+                        <li><strong>Cloud environments</strong> (e.g., managed by ISPs or cloud providers).</li>
+                        <li><strong>On-premises data centers</strong> (self-managed by organizations).</li>
+                    </ul>
+                </li>
+                <li>Requires <strong>high uptime</strong> due to critical business communication needs.</li>
+                <li>System administrators must design for <strong>redundancy</strong>, <strong>scalability</strong>, and
+                    <strong>security</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Logging and Monitoring (Syslog/SIEM)</h2>
+            <ul>
+                <li><strong>Syslog</strong>: Protocol for collecting and consolidating <strong>log files</strong> from
+                    network devices (e.g., switches, routers, firewalls, servers).</li>
+                <li><strong>Security Information and Event Manager (SIEM)</strong>: Centralized system for:<ul>
+                        <li>Storing and analyzing logs.</li>
+                        <li>Correlating events across diverse systems.</li>
+                        <li>Detecting security threats and anomalies.</li>
+                    </ul>
+                </li>
+                <li>Requires <strong>large storage capacity</strong> to retain logs for compliance and forensic
+                    analysis.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Web Servers</h2>
+            <ul>
+                <li>Responds to <strong>browser requests</strong> using <strong>HTTP</strong> or <strong>HTTPS</strong>
+                    protocols.</li>
+                <li>Hosts <strong>web files</strong> (e.g., HTML, CSS, JavaScript) and delivers them to clients.</li>
+                <li>Browsers interpret <strong>HTML</strong> to render graphical web pages.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Authentication Servers (AAA)</h2>
+            <ul>
+                <li><strong>Authentication, Authorization, and Accounting (AAA)</strong>: Centralized system for
+                    managing user access.</li>
+                <li>Primary functions:<ul>
+                        <li><strong>Authentication</strong>: Verifies user credentials (e.g., username/password).</li>
+                        <li><strong>Authorization</strong>: Grants access to specific resources based on permissions.
+                        </li>
+                        <li><strong>Accounting</strong>: Tracks user activity for auditing and compliance.</li>
+                    </ul>
+                </li>
+                <li>Common in <strong>enterprise environments</strong>; rarely used in home networks.</li>
+                <li>Deployed with <strong>redundancy</strong> to ensure continuous availability.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Database Servers</h2>
+            <ul>
+                <li>Stores and manages data in <strong>relational database tables</strong> (e.g., structured like
+                    spreadsheets).</li>
+                <li>Supports <strong>relationships between tables</strong> for complex data queries.</li>
+                <li>Uses <strong>Structured Query Language (SQL)</strong> for data storage and retrieval.</li>
+                <li>Examples of database servers:<ul>
+                        <li><strong>Microsoft SQL Server</strong>.</li>
+                        <li><strong>MySQL</strong>.</li>
+                        <li><strong>PostgreSQL</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Network Time Protocol (NTP)</h2>
+            <ul>
+                <li>Ensures <strong>accurate time synchronization</strong> across all networked devices.</li>
+                <li>Critical for:<ul>
+                        <li>Correlating logs across systems.</li>
+                        <li>Supporting <strong>encryption protocols</strong> (e.g., TLS, Kerberos).</li>
+                        <li>Maintaining compliance and audit trails.</li>
+                    </ul>
+                </li>
+                <li>Uses a <strong>hierarchical system</strong> of NTP servers referencing a <strong>central clock
+                        source</strong>.</li>
+                <li>Client devices periodically sync with NTP servers to maintain accuracy.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Spam Gateways</h2>
+            <ul>
+                <li>Filters <strong>unsolicited emails (spam)</strong> to protect users' inboxes.</li>
+                <li>Deployed as:<ul>
+                        <li>A <strong>cloud-based service</strong>.</li>
+                        <li>A <strong>dedicated server</strong> in the data center.</li>
+                    </ul>
+                </li>
+                <li>Evaluates incoming emails and categorizes them as <strong>legitimate</strong> or
+                    <strong>spam</strong>.</li>
+                <li>May occasionally misclassify emails, requiring users to check <strong>spam folders</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Unified Threat Management (UTM) / Next-Generation Firewalls</h2>
+            <ul>
+                <li>All-in-one <strong>security appliance</strong> combining multiple functions:<ul>
+                        <li><strong>URL filtering</strong> and <strong>content inspection</strong>.</li>
+                        <li><strong>Malware detection</strong> in emails and network traffic.</li>
+                        <li><strong>Spam filtering</strong>.</li>
+                        <li><strong>Firewall</strong> and <strong>Intrusion Prevention System (IPS)</strong>.</li>
+                        <li><strong>Bandwidth shaping</strong> to prioritize critical applications.</li>
+                        <li><strong>VPN connectivity</strong> for secure remote access.</li>
+                    </ul>
+                </li>
+                <li>Often positioned at the <strong>network perimeter</strong> (between the organization and the
+                    internet).</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Load Balancers</h2>
+            <ul>
+                <li>Distributes <strong>incoming traffic</strong> across multiple servers (e.g., web servers) to:<ul>
+                        <li>Improve <strong>performance</strong> and <strong>scalability</strong>.</li>
+                        <li>Ensure <strong>high availability</strong> and <strong>fault tolerance</strong>.</li>
+                    </ul>
+                </li>
+                <li>Automatically detects and removes <strong>failed servers</strong> from the rotation.</li>
+                <li>End users experience <strong>no downtime</strong> during server outages.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Proxy Servers</h2>
+            <ul>
+                <li>Acts as an intermediary between <strong>clients</strong> and <strong>servers</strong> for security
+                    and control.</li>
+                <li>Functions include:<ul>
+                        <li><strong>Security</strong>: Inspects and filters traffic for malicious content.</li>
+                        <li><strong>Access control</strong>: Restricts or allows access to specific resources.</li>
+                        <li><strong>Caching</strong>: Stores frequently accessed content to improve performance.</li>
+                        <li><strong>Content scanning</strong>: Blocks or allows specific types of content.</li>
+                    </ul>
+                </li>
+                <li>Often <strong>transparent</strong> to end users (no manual configuration required).</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Supervisory Control and Data Acquisition (SCADA) / Industrial Control Systems (ICS)</h2>
+            <ul>
+                <li>Specialized systems for managing <strong>industrial equipment</strong> (e.g., power plants,
+                    manufacturing, oil/gas).</li>
+                <li>Enables <strong>remote monitoring, control, and maintenance</strong> of critical infrastructure.
+                </li>
+                <li>Requires <strong>high security</strong> due to the sensitive nature of controlled systems.</li>
+                <li>Typically deployed on a <strong>segmented network</strong> with strict access controls.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Legacy Systems</h2>
+            <ul>
+                <li>Older systems that remain in use due to <strong>critical functionality</strong> or <strong>cost of
+                        replacement</strong>.</li>
+                <li>Examples include hardware or software installed <strong>10+ years ago</strong>.</li>
+                <li>Managing legacy systems requires:<ul>
+                        <li><strong>Specialized knowledge</strong> of outdated technologies.</li>
+                        <li><strong>Compatibility considerations</strong> with modern systems.</li>
+                        <li><strong>Security hardening</strong> to mitigate vulnerabilities.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Embedded Systems</h2>
+            <ul>
+                <li>Purpose-built devices with <strong>limited or no direct OS access</strong> (e.g., fire alarms, time
+                    clocks).</li>
+                <li>Managed and maintained by the <strong>manufacturer</strong>; minimal user intervention required.
+                </li>
+                <li>Examples:<ul>
+                        <li><strong>Fire alarm systems</strong>.</li>
+                        <li><strong>Time clock systems</strong>.</li>
+                        <li><strong>Industrial controllers</strong>.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Internet of Things (IoT) Devices</h2>
+            <ul>
+                <li>Broad category of <strong>network-connected devices</strong> for automation and convenience.</li>
+                <li>Examples:<ul>
+                        <li><strong>Smart appliances</strong> (e.g., refrigerators, coffee makers).</li>
+                        <li><strong>Smart home devices</strong> (e.g., thermostats, doorbells, garage door openers).
+                        </li>
+                        <li><strong>Industrial sensors</strong> and control systems.</li>
+                    </ul>
+                </li>
+                <li>Challenges:<ul>
+                        <li>Manufacturers may lack <strong>network security expertise</strong>.</li>
+                        <li>Devices often have <strong>weak default configurations</strong> or <strong>unpatched
+                                vulnerabilities</strong>.</li>
+                    </ul>
+                </li>
+                <li>Best practices:<ul>
+                        <li>Segment IoT devices on a <strong>dedicated network</strong>.</li>
+                        <li>Restrict access to sensitive systems.</li>
+                        <li>Regularly update firmware.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="8.html" class="nav-button">← Previous: Wireless Network Technologies - 2.2</a>
+                <a href="10.html" class="nav-button">Next: DNS Configuration - 2.4 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

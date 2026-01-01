@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Power-On Self-Test (POST) and Hardware Troubleshooting - A+ Core 1 (5.1)</title>
     <link rel="stylesheet" href="../style.css">
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -15,7 +17,8 @@
         <div class="section">
             <h2>Power-On Self-Test (POST)</h2>
             <ul>
-                <li>The <strong>Power-On Self-Test (POST)</strong> is a series of diagnostic tests performed when a computer is powered on.</li>
+                <li>The <strong>Power-On Self-Test (POST)</strong> is a series of diagnostic tests performed when a
+                    computer is powered on.</li>
                 <li>Checks core components for proper installation and functionality:
                     <ul>
                         <li><strong>CPU</strong>: Verifies installation and communication with BIOS.</li>
@@ -24,8 +27,10 @@
                         <li><strong>BIOS hardware</strong>: Validates basic input/output system functionality.</li>
                     </ul>
                 </li>
-                <li>If a problem is detected, the system may display an error message or emit a series of <strong>beep codes</strong>.</li>
-                <li>Beep codes vary by manufacturer and motherboard; always refer to the manufacturer’s documentation for interpretation.</li>
+                <li>If a problem is detected, the system may display an error message or emit a series of <strong>beep
+                        codes</strong>.</li>
+                <li>Beep codes vary by manufacturer and motherboard; always refer to the manufacturer’s documentation
+                    for interpretation.</li>
             </ul>
         </div>
         <div class="section">
@@ -45,8 +50,10 @@
                 </li>
                 <li><strong>Unexpected Boot Device</strong>:
                     <ul>
-                        <li>System may attempt to boot from a <strong>USB drive or incorrect storage device</strong>.</li>
-                        <li>Adjust the <strong>boot order</strong> in BIOS/UEFI settings to prioritize the correct device.</li>
+                        <li>System may attempt to boot from a <strong>USB drive or incorrect storage device</strong>.
+                        </li>
+                        <li>Adjust the <strong>boot order</strong> in BIOS/UEFI settings to prioritize the correct
+                            device.</li>
                     </ul>
                 </li>
             </ul>
@@ -54,15 +61,19 @@
         <div class="section">
             <h2>Windows Stop Errors (Blue Screen of Death - BSOD)</h2>
             <ul>
-                <li>A <strong>Windows stop error (BSOD)</strong> occurs when the OS encounters an unrecoverable issue.</li>
-                <li>Displays a <strong>stop code</strong> (e.g., <code>0xC0000135</code>) and may reference a faulty driver or hardware.</li>
+                <li>A <strong>Windows stop error (BSOD)</strong> occurs when the OS encounters an unrecoverable issue.
+                </li>
+                <li>Displays a <strong>stop code</strong> (e.g., <code>0xC0000135</code>) and may reference a faulty
+                    driver or hardware.</li>
                 <li>Troubleshooting steps:
                     <ul>
                         <li>Note the <strong>stop code</strong> and search for solutions online.</li>
-                        <li>Use <strong>Last Known Good Configuration</strong> or <strong>System Restore</strong> to revert recent changes.</li>
+                        <li>Use <strong>Last Known Good Configuration</strong> or <strong>System Restore</strong> to
+                            revert recent changes.</li>
                         <li>Boot into <strong>Safe Mode</strong> to diagnose driver or software conflicts.</li>
                         <li>Check <strong>Event Viewer</strong> for detailed error logs.</li>
-                        <li>Run <strong>hardware diagnostics</strong> to test components like RAM, CPU, and storage.</li>
+                        <li>Run <strong>hardware diagnostics</strong> to test components like RAM, CPU, and storage.
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -80,8 +91,10 @@
                 <li>Troubleshooting tools:
                     <ul>
                         <li><strong>Event Viewer</strong>: Logs system and application errors.</li>
-                        <li><strong>Reliability Monitor</strong>: Tracks application crashes and system stability over time.</li>
-                        <li><strong>Reinstallation</strong>: Uninstall and reinstall the application to resolve corruption.</li>
+                        <li><strong>Reliability Monitor</strong>: Tracks application crashes and system stability over
+                            time.</li>
+                        <li><strong>Reinstallation</strong>: Uninstall and reinstall the application to resolve
+                            corruption.</li>
                     </ul>
                 </li>
                 <li>Document error details, including screenshots, for manufacturer support.</li>
@@ -104,7 +117,8 @@
                 </li>
                 <li><strong>Display Works During POST but Fails in Windows</strong>:
                     <ul>
-                        <li>Boot into <strong>VGA Mode</strong> (via F8 during startup) to load a generic video driver.</li>
+                        <li>Boot into <strong>VGA Mode</strong> (via F8 during startup) to load a generic video driver.
+                        </li>
                     </ul>
                 </li>
             </ul>
@@ -121,7 +135,8 @@
                 </li>
                 <li><strong>Fans Spin but No Display</strong>:
                     <ul>
-                        <li>Indicates a <strong>POST failure</strong>; check <strong>motherboard, CPU, or video card</strong>.</li>
+                        <li>Indicates a <strong>POST failure</strong>; check <strong>motherboard, CPU, or video
+                                card</strong>.</li>
                         <li>Test <strong>voltage outputs</strong> from the PSU with a multimeter.</li>
                     </ul>
                 </li>
@@ -131,14 +146,14 @@
             <h2>Performance Issues and Troubleshooting</h2>
             <ul>
                 <li><strong>Slow Performance</strong>:
-                <ul>
-                    <li>Check <strong>Task Manager</strong> for high CPU, memory, or disk usage.</li>
-                    <li>Update the OS and drivers via <strong>Windows Update</strong>.</li>
-                    <li>Free up <strong>disk space</strong> and defragment (if using HDD).</li>
-                    <li>Disable <strong>power-saving modes</strong> that throttle CPU performance.</li>
-                    <li>Run <strong>anti-virus/anti-malware scans</strong> to detect malicious software.</li>
-                </ul>
-            </li>
+                    <ul>
+                        <li>Check <strong>Task Manager</strong> for high CPU, memory, or disk usage.</li>
+                        <li>Update the OS and drivers via <strong>Windows Update</strong>.</li>
+                        <li>Free up <strong>disk space</strong> and defragment (if using HDD).</li>
+                        <li>Disable <strong>power-saving modes</strong> that throttle CPU performance.</li>
+                        <li>Run <strong>anti-virus/anti-malware scans</strong> to detect malicious software.</li>
+                    </ul>
+                </li>
             </ul>
         </div>
         <div class="section">
@@ -146,7 +161,8 @@
             <ul>
                 <li>Heat sources in a computer:
                     <ul>
-                        <li><strong>CPU</strong>, <strong>GPU</strong>, and <strong>memory modules</strong> generate significant heat.</li>
+                        <li><strong>CPU</strong>, <strong>GPU</strong>, and <strong>memory modules</strong> generate
+                            significant heat.</li>
                     </ul>
                 </li>
                 <li>Cooling methods:
@@ -210,11 +226,12 @@
         </div>
         <div class="footer">
             <p>End of Notes</p>
-            <div>
-                <a href="pages/5.0.html" class="nav-button">← Previous Lesson (5.0)</a>
-                <a href="pages/5.2.html" class="nav-button">Next Lesson (5.2) →</a>
+                        <div class="nav-container">
+                <a href="56.html" class="nav-button">← Previous: Cloud Characteristics - 4.2</a>
+                <a href="58.html" class="nav-button">Next: Troubleshooting Storage Devices - 5.2 →</a>
             </div>
         </div>
     </div>
 </body>
+
 </html>

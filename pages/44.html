@@ -1,1 +1,131 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Power Supplies and Electrical Safety - A+ Core 1 (3.1)</title><link rel="stylesheet" href="../style.css"></head><body><div class="container"><div class="header"><h1>Power Supplies and Electrical Safety</h1><p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.1</p></div><div class="section"><h2>Electrical Safety Precautions</h2><ul><li>Always <strong>disconnect from any power source</strong> before working inside a computer to avoid electrocution or damage to components.</li><li>Capacitors inside a computer can <strong>store power</strong> even after disconnection; ensure they are <strong>discharged</strong> before handling.</li><li>Avoid connecting yourself to a building’s <strong>electrical system</strong>, including the <strong>ground wire</strong>, as it may become energized unexpectedly.</li><li>Exercise <strong>caution</strong> when working with electrical equipment to prevent accidents or equipment damage.</li></ul></div><div class="section"><h2>Power Supply Basics</h2><ul><li>A <strong>power supply unit (PSU)</strong> converts <strong>AC (alternating current)</strong> from wall outlets into <strong>DC (direct current)</strong> for computer components.</li><li>Wall outlets provide <strong>AC power</strong>, while motherboards and components require <strong>DC power</strong> to operate.</li><li>PSUs convert <strong>120V AC (US/Canada)</strong> or <strong>230V AC (Europe)</strong> into <strong>3.3V, 5V, and 12V DC</strong> for system use.</li><li>The PSU is a critical component, as all internal hardware relies on its power output.</li></ul></div><div class="section"><h2>Key Electrical Terms</h2><ul><li><strong>Ampere (Amp or A)</strong>: Measures the flow of electrons (current) past a point per second; analogous to water flow in a hose.</li><li><strong>Voltage (Volt or V)</strong>: Represents electrical "pressure"; similar to water pressure in a hose.</li><li><strong>Wattage (Watt or W)</strong>: Measures real power use, calculated as <strong>Volts × Amps = Watts</strong> (e.g., 120V × 0.5A = 60W).</li></ul></div><div class="section"><h2>AC vs. DC Power</h2><ul><li><strong>AC (Alternating Current)</strong>: Constantly reverses direction; represented as a wave. Used for power transmission (e.g., 120V AC at 60Hz in the US, 230V AC at 50Hz in Europe).</li><li><strong>DC (Direct Current)</strong>: Flows in one direction with constant voltage; used by computer components (e.g., 3.3V, 5V, 12V).</li><li>PSUs automatically adjust or require manual switching for different AC inputs (e.g., 120V vs. 230V).</li><li>Using the wrong voltage setting (e.g., 120V PSU on 230V) can cause <strong>catastrophic failure</strong>.</li></ul></div><div class="section"><h2>Power Supply Outputs</h2><ul><li>PSUs provide multiple DC voltages for different components:<ul><li><strong>+12V</strong>: Powers PCIe adapters, hard drives, and high-demand devices.</li><li><strong>+5V</strong>: Used by motherboard components (older systems) and standby power (5V SB).</li><li><strong>+3.3V</strong>: Powers RAM, M.2 slots, and modern motherboard components.</li><li><strong>-12V</strong>: Supports legacy LAN connections and older PCI cards.</li><li><strong>-5V</strong>: Rarely used; found in older systems for legacy adapter cards.</li></ul></li><li>Check the PSU manual or label for <strong>voltage and ampere ratings</strong> per output.</li></ul></div><div class="section"><h2>Motherboard Power Connectors</h2><ul><li>The <strong>24-pin ATX connector</strong> is the primary power connection to the motherboard, providing <strong>3.3V, 5V, and 12V DC</strong>.</li><li>Older systems may use a <strong>20-pin connector</strong>; modern 24-pin connectors are backward-compatible (extra 4 pins unused).</li><li>The connector is <strong>keyed</strong> to prevent incorrect insertion.</li></ul></div><div class="section"><h2>Redundant and Modular Power Supplies</h2><ul><li><strong>Redundant PSUs</strong>: Used in servers for <strong>high availability</strong>; each PSU can handle 100% of the load. If one fails, the other takes over.</li><li><strong>Hot-swappable</strong>: Allows PSU replacement without shutting down the system.</li><li><strong>Modular PSUs</strong>: Allow customization of cables, reducing clutter and improving airflow.<ul><li>Fully modular: All cables are detachable.</li><li>Semi-modular: Some cables are fixed; others are detachable.</li></ul></li></ul></div><div class="section"><h2>Power Supply Wattage and Efficiency</h2><ul><li><strong>Wattage</strong>: Determines the PSU’s capacity; higher wattage supports more components (e.g., high-end GPUs).</li><li>Calculate total system wattage by summing component requirements (CPU, GPU, storage, etc.).</li><li>Aim for a PSU that supports <strong>50% more than your system’s peak load</strong> for efficiency and future upgrades.</li><li><strong>Efficiency</strong>: Measures how well the PSU converts AC to DC (higher efficiency = less heat and power loss).<ul><li>Certifications: <strong>80 PLUS</strong> (Bronze, Silver, Gold, Platinum, Titanium).</li><li>Higher efficiency reduces heat and operating costs.</li></ul></li></ul></div><div class="footer"><p>End of Notes</p><div><a href="pages/1.1.html" class="nav-button">← Previous Lesson (1.1)</a><a href="pages/1.3.html" class="nav-button">Next Lesson (1.3) →</a></div></div></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Power Supplies and Electrical Safety - A+ Core 1 (3.1)</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Power Supplies and Electrical Safety</h1>
+            <p>CompTIA A+ 220-1201 - Core 1 | Lesson 3.1</p>
+        </div>
+        <div class="section">
+            <h2>Electrical Safety Precautions</h2>
+            <ul>
+                <li>Always <strong>disconnect from any power source</strong> before working inside a computer to avoid
+                    electrocution or damage to components.</li>
+                <li>Capacitors inside a computer can <strong>store power</strong> even after disconnection; ensure they
+                    are <strong>discharged</strong> before handling.</li>
+                <li>Avoid connecting yourself to a building’s <strong>electrical system</strong>, including the
+                    <strong>ground wire</strong>, as it may become energized unexpectedly.</li>
+                <li>Exercise <strong>caution</strong> when working with electrical equipment to prevent accidents or
+                    equipment damage.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Power Supply Basics</h2>
+            <ul>
+                <li>A <strong>power supply unit (PSU)</strong> converts <strong>AC (alternating current)</strong> from
+                    wall outlets into <strong>DC (direct current)</strong> for computer components.</li>
+                <li>Wall outlets provide <strong>AC power</strong>, while motherboards and components require <strong>DC
+                        power</strong> to operate.</li>
+                <li>PSUs convert <strong>120V AC (US/Canada)</strong> or <strong>230V AC (Europe)</strong> into
+                    <strong>3.3V, 5V, and 12V DC</strong> for system use.</li>
+                <li>The PSU is a critical component, as all internal hardware relies on its power output.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Key Electrical Terms</h2>
+            <ul>
+                <li><strong>Ampere (Amp or A)</strong>: Measures the flow of electrons (current) past a point per
+                    second; analogous to water flow in a hose.</li>
+                <li><strong>Voltage (Volt or V)</strong>: Represents electrical "pressure"; similar to water pressure in
+                    a hose.</li>
+                <li><strong>Wattage (Watt or W)</strong>: Measures real power use, calculated as <strong>Volts × Amps =
+                        Watts</strong> (e.g., 120V × 0.5A = 60W).</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>AC vs. DC Power</h2>
+            <ul>
+                <li><strong>AC (Alternating Current)</strong>: Constantly reverses direction; represented as a wave.
+                    Used for power transmission (e.g., 120V AC at 60Hz in the US, 230V AC at 50Hz in Europe).</li>
+                <li><strong>DC (Direct Current)</strong>: Flows in one direction with constant voltage; used by computer
+                    components (e.g., 3.3V, 5V, 12V).</li>
+                <li>PSUs automatically adjust or require manual switching for different AC inputs (e.g., 120V vs. 230V).
+                </li>
+                <li>Using the wrong voltage setting (e.g., 120V PSU on 230V) can cause <strong>catastrophic
+                        failure</strong>.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Power Supply Outputs</h2>
+            <ul>
+                <li>PSUs provide multiple DC voltages for different components:<ul>
+                        <li><strong>+12V</strong>: Powers PCIe adapters, hard drives, and high-demand devices.</li>
+                        <li><strong>+5V</strong>: Used by motherboard components (older systems) and standby power (5V
+                            SB).</li>
+                        <li><strong>+3.3V</strong>: Powers RAM, M.2 slots, and modern motherboard components.</li>
+                        <li><strong>-12V</strong>: Supports legacy LAN connections and older PCI cards.</li>
+                        <li><strong>-5V</strong>: Rarely used; found in older systems for legacy adapter cards.</li>
+                    </ul>
+                </li>
+                <li>Check the PSU manual or label for <strong>voltage and ampere ratings</strong> per output.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Motherboard Power Connectors</h2>
+            <ul>
+                <li>The <strong>24-pin ATX connector</strong> is the primary power connection to the motherboard,
+                    providing <strong>3.3V, 5V, and 12V DC</strong>.</li>
+                <li>Older systems may use a <strong>20-pin connector</strong>; modern 24-pin connectors are
+                    backward-compatible (extra 4 pins unused).</li>
+                <li>The connector is <strong>keyed</strong> to prevent incorrect insertion.</li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Redundant and Modular Power Supplies</h2>
+            <ul>
+                <li><strong>Redundant PSUs</strong>: Used in servers for <strong>high availability</strong>; each PSU
+                    can handle 100% of the load. If one fails, the other takes over.</li>
+                <li><strong>Hot-swappable</strong>: Allows PSU replacement without shutting down the system.</li>
+                <li><strong>Modular PSUs</strong>: Allow customization of cables, reducing clutter and improving
+                    airflow.<ul>
+                        <li>Fully modular: All cables are detachable.</li>
+                        <li>Semi-modular: Some cables are fixed; others are detachable.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="section">
+            <h2>Power Supply Wattage and Efficiency</h2>
+            <ul>
+                <li><strong>Wattage</strong>: Determines the PSU’s capacity; higher wattage supports more components
+                    (e.g., high-end GPUs).</li>
+                <li>Calculate total system wattage by summing component requirements (CPU, GPU, storage, etc.).</li>
+                <li>Aim for a PSU that supports <strong>50% more than your system’s peak load</strong> for efficiency
+                    and future upgrades.</li>
+                <li><strong>Efficiency</strong>: Measures how well the PSU converts AC to DC (higher efficiency = less
+                    heat and power loss).<ul>
+                        <li>Certifications: <strong>80 PLUS</strong> (Bronze, Silver, Gold, Platinum, Titanium).</li>
+                        <li>Higher efficiency reduces heat and operating costs.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="footer">
+            <p>End of Notes</p>
+                        <div class="nav-container">
+                <a href="43.html" class="nav-button">← Previous: Cooling - 3.5</a>
+                <a href="45.html" class="nav-button">Next: Multifunction Devices - 3.7 →</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
