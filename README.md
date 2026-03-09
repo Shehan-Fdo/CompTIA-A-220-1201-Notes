@@ -1,5 +1,4 @@
-[![Views](https://ais-dev-v7wk3bky2x7zdypoxm4mlj-251182009847.asia-southeast1.run.app/api/views/Shehan-fdo/CompTIA-A-220-1201-Notes.svg)](https://github.com/Shehan-fdo/CompTIA-A-220-1201-Notes)
-
+[![Views](https://ais-dev-v7wk3bky2x7zdypoxm4mlj-251182009847.asia-southeast1.run.app/api/views/Shehan-Fdo/CompTIA-A-220-1201-Notes.svg)](https://github.com/Shehan-Fdo/CompTIA-A-220-1201-Notes)
 # Professor Messer's CompTIA A+ (220-1101) Study Notes
 
 This repository contains my personal study notes based on Professor Messer's CompTIA A+ Core 1 (220-1101) video course. These are just my own notes for study purposes - **all the knowledge and content credit goes entirely to Professor Messer**. The notes are structured as a simple, clean, and offline-accessible website, making it easy to study on any device with a web browser.
